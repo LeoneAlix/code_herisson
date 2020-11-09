@@ -1,0 +1,358 @@
+<html> 
+    <head>
+
+
+    <meta charset="utf-8">
+    <title>Herizopolis</title>
+
+	<script src="script.js" defer></script>
+	<link rel="stylesheet" href="style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1">
+</head>
+
+<Body>
+
+	    <button id="reset-timer">Reset</button>
+<!-- 	       <button>Click me</button>
+	          <button>Click me</button>
+
+
+	          <button>Pressez moi</button> -->
+
+<div id="timer"></div>
+
+<div id="page-accueil">
+
+
+  <div class="nav-col1">
+    <!-- Trigger/Open The Modal ZONE ARBOREE -->
+    <!-- Bouton -->
+    <img id="btnArbore" src="assets/icone_arbore.png">
+  
+    <!-- The Modal ZONE ARBOREE-->
+    <div id="modalArbore" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <div class="popup">Les espaces arborés, c’est vraiment le pied ! Ici vous vivez votre meilleure vie. Creusez et vous trouverez de quoi  vous sustenter, repérez les troncs qui accueilleront vos petits nids et gambadez en toute sérénité.</div>
+        <img class="illu-classique" src="assets/illu_arbore.png">
+      </div>
+    </div>
+
+
+    <!-- Trigger/Open The Modal ZONE HERBACEE -->
+    <!-- Bouton -->
+      <img id="btnHerbace" src="assets/icone_herbace.png">
+
+    <!-- The Modal ZONE HERBACEE-->
+    <div id="modalHerbace" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content" id="modal-clair-3">
+        <span class="close">&times;</span>
+        <div class="popup">Sur les surfaces herbacées, vous pouvez vous permettre de marcher, vous reposer, et même chasser ! Construire un nid demandera d’être un peu plus habile, mais tout est réuni pour une reproduction canon !</div>
+        <img class="illu-classique" src="assets/illu_herbace.png">
+      </div>
+
+    </div>
+
+
+
+    <!-- Trigger/Open The Modal ZONE ARTIFICIALISEE -->
+    <!-- Bouton -->
+      <img id="btnArtif" src="assets/icone_artif.png">
+
+    <!-- The Modal  ZONE ARTIFICIALISEE-->
+    <div id="modalArtif" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <div class="popup">Sur le bitûme, vous n’êtes pas serein ! Le danger est partout et vous pressez l’allure pour retrouver vite un peu d’herbe sous les pattes ! Courrez pour échapper aux attaques sur ces surfaces !</div>
+        <img class="illu-classique" src="assets/illu_artif.png">
+      </div>
+
+    </div>
+
+
+    <!-- Trigger/Open The Modal ROUTE -->
+    <!-- Bouton -->
+      <img id="btnRoute" src="assets/icone_route.png">
+
+    <!-- The Modal ROUTE-->
+    <div id="modalRoute" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <div class="popup">Vous allez traverser une route, plus d’un hérisson y a laissé sa peau avant vous ! Interrogez la procédure pour savoir si un bolide vous a percuté</div>
+        <img class="illu-classique" src="assets/illu_route.png">
+
+        <img id="btnRoute2" class="icone-rond" src="assets/icone_photo.png">
+        <img id="btnAccueilRoute" class="icone-prev" src="assets/icone_prev.png">
+      </div>
+    </div>
+
+
+          <!-- The Modal ROUTE 2 SAUVE -->
+      <div id="modalRouteSauve" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <img class="illu-classique" src="assets/illu_route_sauve.png">
+          <div class="popup">Bravo ! Vous êtes sains et saufs ! </div>
+        </div>
+          <img id="btnRoute3" class="icone-rond" src="assets/icone_photo.png">
+          <img id="btnAccueilRoute2" class="icone-prev" src="assets/icone_prev.png">
+        </div>
+
+
+
+        <!-- The Modal ROUTE 2 MORT -->
+      <div id="modalRouteMort" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <img class="illu-classique" src="assets/illu_route_mort.png">
+          <div class="popup">Mince, vous avez perdu un élément de votre population de hérissons ! </div>
+        </div>
+          <img id="btnRoute4" class="icone-rond" src="assets/icone_photo.png">
+          <img id="btnAccueilRoute3" class="icone-prev" src="assets/icone_prev.png">
+        </div>
+
+
+
+</div>
+
+   <div class="nav-col2">
+    <!-- Trigger/Open The Modal NOURRITURE -->
+    <!-- Bouton -->
+      <img id="btnNourriture" src="assets/icone_nourriture.png">
+
+    <!-- The Modal NOURRITURE-->
+    <div id="modalNourriture" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <img class="illu-classique" src="assets/illu_nourriture.png">
+        <div class="popup">Vous avez trouvé de quoi vous sustenter ? Prenez une photo pour gagner un point nourriture ! </div>
+
+          <form action="index.php" method="post" enctype="multipart/form-data">
+            <input type="file" name="image" accept="image/*" capture />
+            <input type="submit" value="Upload" />
+          </form>
+
+        <img id="btnFinNour" class="icone-rond" src="assets/icone_photo.png">
+        <img id="btnAccueil" class="icone-prev" src="assets/icone_prev.png">
+
+      </div>
+
+    </div>
+
+
+
+      <!-- The Modal FIN NOURRITURE-->
+      <div id="modalFinNour" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <img class="illu-classique" src="assets/illu_herisson_nourri.png">
+          <div class="popup">Félicitations ! Vous avez nourri un de vos hérissons !</div>
+        </div>
+        
+        <img id="btnAccueil2" class="icone-rond" src="assets/icone_next.png">
+        <img id="btnPhotoNour2" class="icone-prev" src="assets/icone_prev.png">
+
+      </div>
+
+
+    <!-- Trigger/Open The Modal REPRODUCTION -->
+    <!-- Bouton -->
+      <img id="btnReproduction" src="assets/icone_reproduction.png">
+
+    <!-- The Modal REPRODUCTION-->
+    <div id="modalReproduction" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <img class="illu-classique" src="assets/illu_reproduction_1.png">
+        <div class="popup">Vous avez trouvé le partenaire idéal pour vous accoupler ? Super ! Voici comment transformer l’essai ! </div>
+      </div>
+        <img id="btnReprod2" class="icone-rond" src="assets/icone_photo.png">
+        <img id="btnAccueilReprod" class="icone-prev" src="assets/icone_prev.png">
+    </div>
+
+
+          <!-- The Modal REPRODUCTION 2 -->
+      <div id="modalReproduction2" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <img class="illu-classique" src="assets/illu_reproduction_2.png">
+          <div class="popup">Pour séduire votre partenaire, laissez-vous embarquer dans une parade nuptiale improvisée. L’un des hérissons reste au centre et pivote sur lui-même, l’autre décrit un cercle autour de lui à 1 m de distance, ensuite, à vous d’improviser une parade dansée pendant 2 minutes ! </div>
+        </div>
+          <img id="btnReprod3" class="icone-rond" src="assets/icone_photo.png">
+          <img id="btnAccueilReprod2" class="icone-prev" src="assets/icone_prev.png">
+        </div>
+
+
+
+          <!-- The Modal REPRODUCTION 3 -->
+      <div id="modalReproduction3" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <img class="illu-classique" src="assets/illu_reproduction_2.png">
+          <div class="popup">
+
+          <div id="timer2"></div>
+        </div>
+        </div>
+          <img id="btnReprod4" class="icone-rond" src="assets/icone_photo.png">
+          <img id="btnAccueilReprod3" class="icone-prev" src="assets/icone_prev.png">
+        </div>
+
+
+
+
+          <!-- The Modal REPRODUCTION 4 -->
+      <div id="modalReproduction4" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content" id="modal-clair-1">
+          <span class="close">&times;</span>
+          <img class="illu-classique" id="illu-reproduction-3" src="assets/illu_reproduction_3.png">
+          <div class="popup">Félicitations ! Vous attendez un heureux événement ! La gestation de votre portée va commencer</div>
+        </div>
+          <img id="btnReprod5" class="icone-rond" src="assets/icone_photo.png">
+          <img id="btnAccueilReprod4" class="icone-prev" src="assets/icone_prev.png">
+        </div>
+
+
+
+
+         <!-- The Modal REPRODUCTION 5 -->
+      <div id="modalReproduction5" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content" id="modal-clair-2">
+          <span class="close">&times;</span>
+          <img class="illu-classique" id="illu-reproduction-4" src="assets/illu_reproduction_4.png">
+          <div class="popup" id="popup-reprod-4">
+          <div id="timer3"></div><div id="texte-nid">
+          Pour faire votre nid, il vous faut trouver un endroit adapté dans un lieu herbacé ou boisé, et trouver de quoi le construire ! (feuilles, branchages,...). Rien de compliqué, suivez votre instinct de petit hérisson pour construire l’abri qui accueillera vos petits !</div></div>
+        </div>
+          <img id="btnReprod6" class="icone-rond" src="assets/icone_photo.png">
+          <img id="btnAccueilReprod5" class="icone-prev" src="assets/icone_prev.png">
+        </div>
+
+
+
+
+
+  </div>
+
+
+
+  <div class="nav-col3">
+    <!-- Trigger/Open The Modal VEHICULE -->
+    <!-- Bouton -->
+      <img id="btnVehicule" src="assets/icone_vehicule.png">
+
+    <!-- The Modal VEHICULE-->
+    <div id="modalVehicule" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <div class="popup"><p>Une voiture ! Pannique !</p> <p>C’est le moment de vous rouler en boule !</p></div>
+        <img class="illu-classique" src="assets/illu_vehicule.png">
+      </div>
+
+    </div>
+
+
+    <!-- Trigger/Open The Modal HUMAIN -->
+    <!-- Bouton -->
+      <img id="btnHumain" src="assets/icone_humain.png">
+
+    <!-- The Modal HUMAIN-->
+    <div id="modalHumain" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content" id="modal-clair-4">
+        <span class="close">&times;</span>
+        <div class="popup"><p>Des humains ! Pannique !</p> <p>Combien sont-ils ? Est-ce qu’ils s’approchent  à moins d’un mètre de vous ?</p></div>
+        <img class="illu-classique" src="assets/illu_humain.png">
+      </div>
+
+    </div>
+
+
+    <!-- Trigger/Open The Modal HERISSON -->
+    <!-- Bouton -->
+      <img id="btnHerisson" src="assets/icone_herisson.png">
+
+    <!-- The Modal HERISSON-->
+      <div id="modalHerisson" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <div class="popup">...</div>
+          <img class="illu-classique" src="assets/illu_herisson_2.png">
+        </div>
+      </div>
+
+  </div>
+</div>
+
+
+    <!-- ATTAQUE RANDOM 1 -->
+
+      <div id="attaqueRandom1" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <div class="popup">attaque random 1 !</div>
+        </div>
+      </div>
+
+
+    <!-- ATTAQUE RANDOM 2 -->
+
+      <div id="attaqueRandom2" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <div class="popup">attaque random 2 !</div>
+        </div>
+      </div>
+
+    <!-- ATTAQUE RANDOM 3 -->
+
+      <div id="attaqueRandom3" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <div class="popup">attaque random 3 !</div>
+        </div>
+      </div>
+
+
+
+<header>
+	
+</header>
+
+<main>
+</main>
+
+<footer>
+</footer>
+
+</Body>
+</html>
+
+
+

@@ -1,0 +1,721 @@
+body {
+  background-color: #1238E0;
+  margin-top:10px;
+  margin-bottom:10px;
+  margin-left:auto;
+  margin-right:auto;
+  
+/*  padding: 10px 10px 10px 10px;*/
+  font-family: "Tomorrow";
+  font-weight:400;
+/*  width:50%;
+  max-width:600px;*/
+  font-size:18px;
+  line-height:1.3em;
+}
+
+
+
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 500px; /* Full width */
+  max-width: 100%;
+  height: 800px; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.3); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background: rgba(18,56,224,0.8);
+  margin: 15% auto;
+  padding: 20px;
+  width: 80%;
+  height:80%;
+  border: 1px solid #0fdbba;
+  border-radius: 20px;
+  box-shadow: 1px 1px 19px 3px rgba(0,0,0,0.2);
+}
+
+#modal-clair-1 {
+  background: rgba(15,219,186,0.9);
+}
+#modal-clair-2 {
+  background: rgba(15,219,186,0.9);
+}
+#modal-clair-3 {
+  background: rgba(15,219,186,0.9);
+}
+#modal-clair-4 {
+  background: rgba(15,219,186,0.9);
+}
+
+
+.modal-2 {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 3; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  max-width: 100%;
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: #1238E0;
+  background-repeat: no-repeat;
+}
+
+/* Modal intro Content/Box */
+.modal-2-content {
+  /*background: #1238E0;*/
+  margin-top:0vw;
+  width: 100%;
+}
+
+#accueil-app {
+  background-image: url(assets/fond_accueil.png);
+  background-size: 130%;
+  background-position: center -2vw;
+}
+
+#modalIntro-1 {
+  background-image: url(assets/fond_intro1.png);
+  background-size: 130%;
+  background-position: center -2vw;
+}
+
+#modalIntro-2 {
+  background-image: url(assets/fond_intro2.png);
+  background-size: 130%;
+  background-position: center -0.5vw;
+}
+
+#modalIntro-3 {
+  background-image: url(assets/fond_intro3.png);
+  background-size: 125%;
+  background-position: center -2vw;
+}
+
+#modalIntro-4 {
+  background-image: url(assets/fond_intro4.png);
+  background-size: 120%;
+  background-position: center -10vw;
+}
+
+
+
+#attaqueRandom1{
+  display:none;
+}
+
+#attaqueRandom2{
+  display:none;
+}
+
+#attaqueRandom3{
+  display:none;
+}
+
+
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  z-index: 3;
+  position: relative;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+/* TEXTES */
+
+.popup {
+/*  position:relative;*/
+  color: #1238E0;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 20px;
+  border:0.5vw solid #0fdbba;
+/*  margin: 15% auto;*/
+  padding:10px;
+  font-size: 18px;
+  text-align:center;
+}
+
+#popup-reprod-4 {
+  position: relative;
+  margin-top: -50vw;
+  z-index:3;
+}
+
+.texte-gros {
+  position:relative;
+  color: #1238E0;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 20px;
+  border:0.5vw solid #0fdbba;
+  margin-top: 15vw;
+  margin-left:10vw;
+  margin-right:10vw;
+  padding:3vw;
+  font-size: 7vw;
+  text-align:center;
+  line-height:0.9em;
+  z-index: 3;
+}
+
+
+.texte-intro {
+  position:absolute;
+  color: #1238E0;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 20px;
+  border:0.5vw solid #0fdbba;
+  margin-left:10vw;
+  margin-right:10vw;
+  margin-top:30vw;
+  padding:3vw;
+  font-size: 22px;
+  text-align:center;
+  line-height:0.9em;
+  z-index: 2;
+}
+
+#texte-intro2 {
+  margin-top: 0vw;
+}
+
+#texte-intro3 {
+  margin-top: 20vw;
+}
+
+
+#fin_texte{
+
+}
+
+
+
+
+/*  MENU / STRUCTURE */
+
+.nav-col1 {
+  position:absolute;
+  top: 20px;
+  left: 0vw;
+}
+
+.nav-col2 {
+  position: absolute;
+  top: calc(81.5vw + 20px);
+  left: 29.5vw;
+}
+
+.nav-col3 {
+  position: absolute;
+  top: 20px;
+  left: 53.5vw;
+}
+
+#page-accueil{
+  margin: 0 auto;
+  height: 90vh;
+  width: 87vw;
+  position: relative;
+}
+
+
+
+
+
+
+
+/* IMAGES */
+
+.illu-classique {
+  width: 80vw;
+  position:relative;
+  display:block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  z-index: 2;
+}
+
+
+#illu-reproduction-3 {
+  width: 85vw;
+  margin-left: -3vw;
+}
+
+#illu-reproduction-4 {
+  width: 85vw;
+  margin-left: -3vw;
+}
+
+
+.illu-fond1 {
+  width: 140vw;
+  position:absolute;
+  display:block;
+  top: -10vw;
+  left: -20vw;
+  z-index: 0;
+}
+
+.illu-fond2 {
+  position:absolute;
+  width: 150vw;
+  display:block;
+  top: 20vw;
+  left: -15vw;
+  margin-right: auto;
+  z-index: 0;
+}
+
+.illu-fond3 {
+  position:absolute;
+  width: 130vw;
+  display:block;
+  margin-top: -100vw;
+  margin-left: -8vw;
+  margin-right: auto;
+  z-index: 0;
+}
+
+#illu-fond4{
+  width:120vw;
+  margin-left: -10vw;
+  margin-top:-5vw;
+}
+
+
+
+#illu-pattern1{
+  width: 50vw;
+  position:relative;
+  display:block;
+  top: 5vw;
+  margin-left: -3vw;
+}
+
+#illu-pattern2{
+  width: 50vw;
+  position:absolute;
+  display:block;
+  margin-left: 55vw;
+  margin-top: -25vw;
+}
+
+
+#illu-pattern3{
+  width: 50vw;
+  position:absolute;
+  display:block;
+  margin-left: -25vw;
+  margin-top: 17vw;
+}
+
+#illu-pattern4{
+  width: 50vw;
+  position:absolute;
+  display:block;
+  margin-left: 33vw;
+  margin-top: 17vw;
+}
+
+#illu-pattern5{
+  width: 50vw;
+  position:absolute;
+  display:block;
+  margin-left: 90vw;
+  margin-top: 17vw;
+}
+
+#illu-pattern6{
+  width: 50vw;
+  position:absolute;
+  display:block;
+  margin-left: 0vw;
+  margin-top: 59vw;
+}
+
+#illu-pattern7{
+  width: 50vw;
+  position:absolute;
+  display:block;
+  margin-left: 58vw;
+  margin-top: 59vw;
+}
+
+#fresque-herissons{
+  width: 100vw;
+  height:100vh;
+  overflow: hidden;
+}
+
+
+
+
+/* ICONES */
+
+#btnArbore {
+  width: 32vw;
+}
+
+#btnArbore:hover,
+#btnArbore:focus {
+  cursor: pointer;
+}
+
+
+#btnHerbace {
+  width: 32vw;
+  display: block;
+  margin-top: -3vw;
+}
+
+#btnHerbace:hover,
+#btnHerbace:focus {
+  cursor: pointer;
+}
+
+
+#btnArtif {
+  width: 32.5vw;
+  display: block;
+  margin-left: 1vw;
+  margin-top: -2.5vw; 
+}
+
+#btnArtif:hover,
+#btnArtif:focus {
+  cursor: pointer;
+}
+
+#btnRoute {
+  width: 32vw;
+  margin-left: 0vw;
+  margin-top: -13vw;
+}
+
+#btnRoute:hover,
+#btnRoute:focus {
+  cursor: pointer;
+}
+
+#btnNourriture {
+  width: 34vw;
+  margin-left: 0.5vw;
+}
+
+#btnNourriture:hover,
+#btnNourriture:focus {
+  cursor: pointer;
+}
+
+#btnReproduction {
+  width: 36vw;
+  display: block;
+  margin-top: -4vw;
+  margin-left: -2vw;
+}
+
+#btnReproduction:hover,
+#btnReproduction:focus {
+  cursor: pointer;
+}
+
+
+#btnVehicule {
+  width: 32vw;
+}
+
+#btnVehicule:hover,
+#btnVehicule:focus {
+  cursor: pointer;
+}
+
+#btnHumain {
+  width: 35vw;
+  margin-left: -2vw;
+  margin-top: -4.5vw;
+}
+
+#btnHumain:hover,
+#btnHumain:focus {
+  cursor: pointer;
+}
+
+#btnHerisson {
+    width: 32vw;
+    margin-left: -1vw;
+    margin-top: -12vw;
+}
+
+#btnHerisson:hover,
+#btnHerisson:focus {
+  cursor: pointer;
+}
+
+
+/*BOUTONS RONDS*/
+
+.btnNext {
+    width: 17vw;
+    position:absolute;
+    align-content: center;
+    left: 54vw;
+    top: 170vw;
+    z-index:3;
+}
+
+
+.btnPrev {
+    width: 17vw;
+    position:absolute;
+    left: 28vw;
+    top: 170vw;
+    z-index:3;
+}
+
+
+
+#btnReprod4{
+  display:none;
+}
+
+#btnReprod6{
+  display:none;
+}
+
+/*#btnNext1 {
+    margin-top: 84.8vw;
+}
+
+#btnNext2 {
+    margin-top: 169vw;
+}
+
+#btnNext3 {
+    margin-top: 169vw;
+}
+
+#btnNext4 {
+    margin-top: 55vw;
+}*/
+
+#btnNext5 {
+    display:none;
+}
+
+.btnNext:hover,
+.btnNext:focus {
+  cursor: pointer;
+}
+
+
+
+.icone-rond {
+  width: 17vw;
+  left: 52vw;
+  top: 170vw;    
+  position:absolute;
+  z-index:3;
+}
+
+
+.icone-prev {
+  width: 17vw;
+  left: 28vw;
+  top: 170vw;
+  position:absolute;
+  z-index:3;
+}
+
+.icone-rond:hover,
+.icone-rond:focus {
+  cursor: pointer;
+}
+
+
+
+@media screen and (min-width: 900px) {
+
+  .modal {
+    width: 500px; /* Full width */
+    max-width: 100%;
+    height: 800px; /* Full height */
+  }
+
+  /* Modal Content/Box */
+  .modal-content {
+/*    margin: 15% auto;*/
+/*    padding: 20px;*/
+    width: 80%;
+  }
+
+  /* The Close Button */
+  .close {
+    font-size: 28px;
+  }
+
+
+  /*  MENU */
+
+  .nav-col1 {
+    position:absolute;
+    top:20px;
+    left:0px;
+  }
+
+  .nav-col2 {
+    position:absolute;
+    top: 525px;
+    left: 180px;
+  }
+
+  .nav-col3 {
+    position:absolute;
+    top: 28px;
+    left: 325px;
+  }
+
+
+
+  /* TEXTES */
+
+  .popup {
+    border:2px solid #0fdbba;
+/*    margin: 15% auto;*/
+    padding:10px;
+    font-size: 16px;
+  }
+
+
+  .texte-gros {
+  margin-top: 30px;
+  margin-left:100px;
+  margin-right:100px;
+  padding:10px;
+  font-size: 80px;
+}
+
+
+  /* IMAGES */
+
+  .illu-classique {
+  width: 300px;
+  display:block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  }
+
+
+
+  #illu-pattern1{
+    width: 100px;
+    display:block;
+    margin-left: -20px;
+    margin-right: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  #illu-pattern2{
+    width: 100px;
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+
+
+  /* ICONES */
+
+  #btnArbore {
+    width: 200px;
+    margin-left: 10px;
+    margin-top: 20px;
+  }
+
+  #btnHerbace {
+    width: 200px;
+    margin-left: 9px;
+    margin-top: -20px;
+  }
+
+  #btnArtif {
+    width: 190px;
+    display:block;
+    margin-left: 20px;
+    margin-top: -17px;
+  }
+
+  #btnRoute {
+    width: 190px;
+    margin-left: 13px;
+    margin-top: -77px;
+  }
+
+  #btnNourriture {
+    width: 220px;
+    margin-left: 10px;
+    margin-top: 0px;
+    margin-bottom: -13px;
+  }
+
+  #btnReproduction {
+    width: 230px;
+    display:block;
+    margin-left: -7px;
+    margin-top: -13px;
+  }
+
+  #btnVehicule {
+    width: 200px;
+    display:block;
+    margin-left: 17px;
+    margin-top: -12px;
+  }
+
+  #btnHumain {
+    width: 220px;
+    display:block;
+    margin-left: 4px;
+    margin-top: -27px;
+  }
+
+  #btnHerisson {
+    width: 200px;
+    display:block;
+    margin-left: 11px;
+    margin-top: -75px;
+  }
+
+  .icone-rond {
+    width: 50px;
+    display:block;
+ 
+  }
+
+}
+
