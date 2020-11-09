@@ -33,12 +33,12 @@ body {
 /* Modal Content/Box */
 .modal-content {
   background: rgba(18,56,224,0.8);
-  margin-top: 3vh;
+  margin-top: 2vh;
   margin-left: auto;
   margin-right:auto;
   padding: 10px;
   width: 85%;
-  height:85%;
+  height:95%;
   border: 1px solid #0fdbba;
   border-radius: 20px;
   box-shadow: 1px 1px 19px 3px rgba(0,0,0,0.2);
