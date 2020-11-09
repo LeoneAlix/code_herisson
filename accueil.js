@@ -1,143 +1,534 @@
-var compteurVies;
+
+let babyHedgehogNumber = Math.floor(Math.random() * 5) + 1;
+
+let HedgehogNumber = document.querySelector('.HedgehogNumber');
 
 
-// SESSION ACCUEIL
+// const button = document.querySelector('button');
+
+// button.onclick = function() {
+//   let name = prompt('Quel est votre nom ?');
+//   alert('Salut ' + name + ', sympa de vous voir !');
+// }
+
+var compteurNour = 0;
+var compteurVies = localStorage.getItem('compteurVies');
+console.log(compteurVies);
 
 
+var attaqueRandom = ['attaqueRandom1', 'attaqueRandom2', 'attaqueRandom3'];
 
-// FORMULAIRE NOMBRE PARTICIPANTS
-// function afficher(form1) { 
-// 	var testin =document.form1.input.value; 
-// 	console.log(testin);
-// 	// document.form1.output.value=testin;
-// } 
+var traverseeRoute = ['modalRouteSauve', 'modalRouteSauve', 'modalRouteSauve', 'modalRouteMort', 'modalRouteMort'];
 
-$('#boutonForm').click(function() {
-	
-	var testin =document.form1.input.value; 
+localStorage.setItem('attackShown1', 'false');
+localStorage.setItem('attackShown2', 'false');
+localStorage.setItem('attackShown3', 'false');
 
-	if (testin < 2) {
-		$('#fin_texte').append(testin + ' hérisson embarqué ! Il faudra tout donner pour qu’aucun de vous ne reste sur le bas-côté. Votre objectif sera d’atteindre le centre de transformation procédural avec le plus d’individus possible.');
-	} else {
-		$('#fin_texte').append(testin + ' hérissons embarqués ! Il faudra tout donner pour qu’aucun de vous ne reste sur le bas-côté. Votre objectif sera d’atteindre le centre de transformation procédural avec le plus d’individus possible.');	
+// FONCTION ATTAQUES RANDOMS
+
+
+function getRandomInt(max) {
+  return Math.floor(Math.random() * Math.floor(max));
+}
+
+function triggerAttack(time) {
+
+	console.log(timer);
+	console.log(localStorage.getItem('attackShown1'));
+
+	if (timer > 0 && timer < time && localStorage.getItem('attackShown1') == 'false') {
+		var num = getRandomInt(attaqueRandom.length);
+		var chosenAttaque = attaqueRandom[num];
+		$("#" + chosenAttaque).css('display', 'block');
+		localStorage.setItem('attackShown1', true);
 	}
-
-	localStorage.setItem('compteurVies', testin);
-	compteurVies = localStorage.getItem('compteurVies');
-	console.log(compteurVies);
-
-	$("#form1").css('display', 'none');
-	$("#btnNext5").css('display', 'block');
-
-	// $('#fin_texte').append(testin + 'hérissons embarqués ! Il faudra tout donner pour qu’aucun de vous ne reste sur le bas-côté. Votre objectif sera d’atteindre le centre de transformation procédural avec le plus d’individus possible.');
-});
+}
 
 
+// TIMER GLOBAL
+
+var timer = 0;
+
+$('#reset-timer').click(function() {
+	timer = 3600;
+}); 
+
+var x = setInterval(function() {
+
+	timer = timer - 1;
+
+  // Time calculations for days, hours, minutes and seconds
+  var minutes = Math.floor((timer % (60 * 60)) / 60);
+  var seconds = Math.floor((timer % 60));
+
+  // Display the result in the element with id="demo"
+
+  if (seconds < 10) {
+    document.getElementById("timer").innerHTML = minutes + ":0" + seconds;
+  }
+  else {
+  	document.getElementById("timer").innerHTML = minutes + ":" + seconds;
+  }
+
+  triggerAttack(3595);
+
+  // If the count down is finished, write some text 
+  if (timer < 0) {
+    document.getElementById("timer").innerHTML = "EXPIRED";
+  }
+}, 1000);
 
 
 
+// TIMER PARADE NUPTIALE
 
-// INTRODUCTION 1 -> 2
+var timer2;
+
+$('#btnReprod3').click(function() {
+	timer2 = 60000;
+}); 
+
+var x2 = setInterval(function() {
+
+	timer2 = timer2 - 1000;
+
+  // Time calculations for days, hours, minutes and seconds
+  var minutes = Math.floor((timer2 % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((timer2 % (1000 * 60)) / 1000);
+
+  // Display the result in the element with id="demo"
+
+  if (seconds < 10) {
+    document.getElementById("timer2").innerHTML = minutes + ":0" + seconds;
+  }
+  else {
+  	document.getElementById("timer2").innerHTML = minutes + ":" + seconds;
+  }
+
+  // If the count down is finished, write some text 
+  if (timer2 < 0) {
+    document.getElementById("timer2").innerHTML = "C'est fini !";
+    $("#btnReprod4").css('display', 'block');
+  }
+}, 1000);
 
 
-$('#btnNext1').click(function() {
-	$('#modalIntro-1').css('display','block');
+
+// TIMER Gestation + nid
+
+var timer3;
+
+$('#btnReprod5').click(function() {
+	timer3 = 600000;
+}); 
+
+var x2 = setInterval(function() {
+
+	timer3 = timer3 - 1000;
+
+  // Time calculations for days, hours, minutes and seconds
+  var minutes = Math.floor((timer3 % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((timer3 % (1000 * 60)) / 1000);
+
+  // Display the result in the element with id="demo"
+
+  if (seconds < 10) {
+    document.getElementById("timer3").innerHTML = minutes + ":0" + seconds;
+  }
+  else {
+  	document.getElementById("timer3").innerHTML = minutes + ":" + seconds;
+  }
+
+  // If the count down is finished, write some text 
+  if (timer3 < 0) {
+    document.getElementById("timer2").innerHTML = "Votre portée est née !";
+    $("#btexte-nid").css('display', 'none');
+    $("#btnReprod6").css('display', 'block');
+  }
+}, 1000);
+
+
+
+// ZONE ARBOREE
+
+$('#btnArbore').click(function() {
+	$('#modalArbore').css('display','block');
 }); 
 
 
-$("#modalIntro-1 .close").click(function() {
-	$("#modalIntro-1").css('display', 'none');
+$("#modalArbore .close").click(function() {
+	$("#modalArbore").css('display', 'none');
 });
 
 $(window).click(function(event) {
-	if (event.target.id == "modalIntro-1" ) {
-		$("#modalIntro-1").css('display', 'none');
+	if (event.target.id == "modalArbore" ) {
+		$("#modalArbore").css('display', 'none');
 	}
 });
 
-$('#btnPrev1').click(function() {
-	$("#modalIntro-1").css('display', 'none');
+
+
+
+// ZONE HERBACEE 
+
+
+$('#btnHerbace').click(function() {
+	$('#modalHerbace').css('display','block');
 }); 
 
 
-// INTRODUCTION 2 -> 3
-
-
-$('#btnNext2').click(function() {
-	$('#modalIntro-2').css('display','block');
-}); 
-
-
-$("#modalIntro-2 .close").click(function() {
-	$("#modalIntro-2").css('display', 'none');
-	$("#modalIntro-1").css('display', 'none');
+$("#modalHerbace .close").click(function() {
+	$("#modalHerbace").css('display', 'none');
 });
 
 $(window).click(function(event) {
-	if (event.target.id == "modalIntro-2" ) {
-		$("#modalIntro-2").css('display', 'none');
-		$("#modalIntro-1").css('display', 'none');
+	if (event.target.id == "modalHerbace" ) {
+		$("#modalHerbace").css('display', 'none');
 	}
 });
 
-$('#btnPrev2').click(function() {
-	$("#modalIntro-2").css('display', 'none');
+
+
+// ZONE ARTIFICIALISEE
+
+$('#btnArtif').click(function() {
+	$('#modalArtif').css('display','block');
 }); 
 
 
-
-
-// INTRODUCTION 3 -> 4
-
-
-$('#btnNext3').click(function() {
-	$('#modalIntro-3').css('display','block');
-}); 
-
-
-$("#modalIntro-3 .close").click(function() {
-	$("#modalIntro-3").css('display', 'none');
-	$("#modalIntro-2").css('display', 'none');
-	$("#modalIntro-1").css('display', 'none');
+$("#modalArtif .close").click(function() {
+	$("#modalArtif").css('display', 'none');
 });
 
 $(window).click(function(event) {
-	if (event.target.id == "modalIntro-3" ) {
-		$("#modalIntro-3").css('display', 'none');
-		$("#modalIntro-2").css('display', 'none');
-		$("#modalIntro-1").css('display', 'none');
+	if (event.target.id == "modalArtif" ) {
+		$("#modalArtif").css('display', 'none');
 	}
 });
-$('#btnPrev3').click(function() {
-	$("#modalIntro-3").css('display', 'none');
+
+
+
+// ROUTE
+
+
+$('#btnRoute').click(function() {
+	$('#modalRoute').css('display','block');
 }); 
 
 
-// INTRODUCTION 4 -> 5
-
-
-$('#btnNext4').click(function() {
-	$('#modalIntro-4').css('display','block');
-}); 
-
-
-$("#modalIntro-4 .close").click(function() {
-	console.log('close 4');
-	$("#modalIntro-4").css('display', 'none');
-	$("#modalIntro-3").css('display', 'none');
-	$("#modalIntro-2").css('display', 'none');
-	$("#modalIntro-1").css('display', 'none');
-
+$("#modalRoute .close").click(function() {
+	$("#modalRoute").css('display', 'none');
 });
 
 $(window).click(function(event) {
-	if (event.target.id == "modalIntro-4" ) {
-		$("#modalIntro-4").css('display', 'none');
-		$("#modalIntro-3").css('display', 'none');
-		$("#modalIntro-2").css('display', 'none');
-		$("#modalIntro-1").css('display', 'none');
+	if (event.target.id == "modalRoute" ) {
+		$("#modalRoute").css('display', 'none');
 	}
 });
-$('#btnPrev4').click(function() {
-	$("#modalIntro-4").css('display', 'none');
+
+$('#btnAccueilRoute').click(function() {
+	$("#modalRoute").css('display', 'none');
 }); 
+
+$('#btnRoute2').click(function() {
+	var num2 = getRandomInt(traverseeRoute.length);
+	var chosenRoute = traverseeRoute[num2];
+	$("#" + chosenRoute).css('display', 'block');
+	$("#modalRoute").css('display', 'none');
+	if (chosenRoute == "modalRouteMort") {
+		compteurVies = compteurVies - 1;
+		console.log(compteurVies);
+	}
+});
+
+$("#modalRouteSauve .close").click(function() {
+	$("#modalRouteSauve").css('display', 'none');
+});
+
+$(window).click(function(event) {
+	if (event.target.id == "modalRoute" ) {
+		$("#modalRouteSauve").css('display', 'none');
+	}
+});
+
+$("#modalRouteMort .close").click(function() {
+	$("#modalRouteMort").css('display', 'none');
+});
+
+$(window).click(function(event) {
+	if (event.target.id == "modalRoute" ) {
+		$("#modalRouteMort").css('display', 'none');
+	}
+});
+
+$('#btnAccueilRoute2').click(function() {
+	$("#modalRouteMort").css('display', 'none');
+	$("#modalRouteSauve").css('display', 'none');
+	$("#modalRoute").css('display', 'block');
+}); 
+
+$('#btnRoute3').click(function() {
+	$("#modalRouteMort").css('display', 'none');
+	$("#modalRouteSauve").css('display', 'none');
+	$("#modalRoute").css('display', 'none');
+}); 
+
+$('#btnAccueilRoute3').click(function() {
+	$("#modalRouteMort").css('display', 'none');
+	$("#modalRouteSauve").css('display', 'none');
+	$("#modalRoute").css('display', 'block');
+}); 
+
+$('#btnRoute4').click(function() {
+	$("#modalRouteMort").css('display', 'none');
+	$("#modalRouteSauve").css('display', 'none');
+	$("#modalRoute").css('display', 'none');
+}); 
+
+
+
+// NOURRITURE
+
+$('#btnNourriture').click(function() {
+	$('#modalNourriture').css('display','block');
+}); 
+
+
+
+$("#modalNourriture .close").click(function() {
+	$("#modalNourriture").css('display', 'none');
+});
+
+$(window).click(function(event) {
+	if (event.target.id == "modalNourriture" ) {
+		$("#modalNourriture").css('display', 'none');
+	}
+});
+
+$('#btnAccueil').click(function() {
+	$("#modalNourriture").css('display', 'none');
+}); 
+
+
+
+
+
+// fIN NOURRITURE
+
+
+$('#btnFinNour').click(function() {
+	$('#modalFinNour').css('display','block');
+	$("#modalNourriture").css('display', 'none');
+	compteurNour = compteurNour + 1;
+	console.log(compteurNour);
+}); 
+
+
+$("#modalFinNour .close").click(function() {
+	$("#modalFinNour").css('display', 'none');
+});
+
+$(window).click(function(event) {
+	if (event.target.id == "modalFinNour" ) {
+		$("#modalFinNour").css('display', 'none');
+	}
+});
+
+$('#btnPhotoNour2').click(function() {
+	$('#modalNourriture').css('display','block');
+	$('#modalFinNour').css('display','none');
+});
+
+$('#btnAccueil2').click(function() {
+	$("#modalFinNour").css('display','none');
+}); 
+
+
+
+
+// >REPRODUCTION
+
+
+$('#btnReproduction').click(function() {
+	$('#modalReproduction').css('display','block');
+}); 
+
+
+$("#modalReproduction .close").click(function() {
+	$("#modalReproduction").css('display', 'none');
+});
+
+$(window).click(function(event) {
+	if (event.target.id == "modalReproduction" ) {
+		$("#modalReproduction").css('display', 'none');
+	}
+});
+
+$('#btnAccueilReprod').click(function() {
+	$("#modalReproduction").css('display', 'none');
+}); 
+
+
+//  REPRODUCTION 2
+
+$('#btnReprod2').click(function() {
+	$("#modalReproduction2").css('display','block');
+	$("#modalReproduction").css('display', 'none');
+}); 
+
+
+$("#modalReproduction2 .close").click(function() {
+	$("#modalReproduction2").css('display', 'none');
+});
+
+$(window).click(function(event) {
+	if (event.target.id == "modalReproduction2" ) {
+		$("#modalReproduction2").css('display', 'none');
+	}
+});
+
+$('#btnAccueilReprod2').click(function() {
+	$("#modalReproduction2").css('display', 'none');
+	$('#modalReproduction').css('display','block');
+}); 
+
+
+//  REPRODUCTION 3
+
+$('#btnReprod3').click(function() {
+	$("#modalReproduction3").css('display','block');
+	$("#modalReproduction2").css('display', 'none');
+}); 
+
+
+$("#modalReproduction3 .close").click(function() {
+	$("#modalReproduction3").css('display', 'none');
+});
+
+$(window).click(function(event) {
+	if (event.target.id == "modalReproduction3" ) {
+		$("#modalReproduction3").css('display', 'none');
+	}
+});
+
+$('#btnAccueilReprod3').click(function() {
+	$("#modalReproduction3").css('display', 'none');
+	$('#modalReproduction2').css('display','block');
+}); 
+
+//  REPRODUCTION 4
+
+$('#btnReprod4').click(function() {
+	$("#modalReproduction4").css('display','block');
+	$("#modalReproduction3").css('display', 'none');
+}); 
+
+
+$("#modalReproduction4 .close").click(function() {
+	$("#modalReproduction4").css('display', 'none');
+});
+
+$(window).click(function(event) {
+	if (event.target.id == "modalReproduction4" ) {
+		$("#modalReproduction4").css('display', 'none');
+	}
+});
+
+$('#btnAccueilReprod4').click(function() {
+	$("#modalReproduction4").css('display', 'none');
+	$('#modalReproduction3').css('display','block');
+}); 
+
+//  REPRODUCTION 5
+
+$('#btnReprod5').click(function() {
+	$("#modalReproduction5").css('display','block');
+	$("#modalReproduction4").css('display', 'none');
+}); 
+
+
+$("#modalReproduction5 .close").click(function() {
+	$("#modalReproduction5").css('display', 'none');
+});
+
+$(window).click(function(event) {
+	if (event.target.id == "modalReproduction5" ) {
+		$("#modalReproduction5").css('display', 'none');
+	}
+});
+
+$('#btnAccueilReprod5').click(function() {
+	$("#modalReproduction5").css('display', 'none');
+	$('#modalReproduction4').css('display','block');
+}); 
+
+
+
+// VEHICULE
+
+
+$('#btnVehicule').click(function() {
+	$('#modalVehicule').css('display','block');
+}); 
+
+
+$("#modalVehicule .close").click(function() {
+	$("#modalVehicule").css('display', 'none');
+});
+
+$(window).click(function(event) {
+	if (event.target.id == "modalVehicule" ) {
+		$("#modalVehicule").css('display', 'none');
+	}
+});
+
+
+
+// HUMAIN
+
+
+$('#btnHumain').click(function() {
+	$('#modalHumain').css('display','block');
+}); 
+
+
+$("#modalHumain .close").click(function() {
+	$("#modalHumain").css('display', 'none');
+});
+
+$(window).click(function(event) {
+	if (event.target.id == "modalHumain" ) {
+		$("#modalHumain").css('display', 'none');
+	}
+});
+
+
+
+
+// HERISSON
+
+
+$('#btnHerisson').click(function() {
+	$('#modalHerisson').css('display','block');
+}); 
+
+
+$("#modalHerisson .close").click(function() {
+	$("#modalHerisson").css('display', 'none');
+});
+
+$(window).click(function(event) {
+	if (event.target.id == "modalHerisson" ) {
+		$("#modalHerisson").css('display', 'none');
+	}
+});
+
+
+
+
+
+
+
+
+
+
