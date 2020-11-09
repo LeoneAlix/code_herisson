@@ -541,7 +541,7 @@ body {
 .icone-rond {
   width: 17vw;
   left: 52vw;
-  top: 78vh;    
+  top: 82vh;    
   position:absolute;
   z-index:3;
 }
@@ -550,7 +550,7 @@ body {
 .icone-prev {
   width: 17vw;
   left: 28vw;
-  top: 78vh;
+  top: 82vh;
   position:absolute;
   z-index:3;
 }
