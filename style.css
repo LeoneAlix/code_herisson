@@ -44,6 +44,19 @@ body {
   box-shadow: 1px 1px 19px 3px rgba(0,0,0,0.2);
 }
 
+.modal-content-clair {
+  background: rgba(15,219,186,0.9);
+  margin-top: 2vh;
+  margin-left: auto;
+  margin-right:auto;
+  padding: 10px;
+  width: 85%;
+  height:95%;
+  border: 1px solid #0fdbba;
+  border-radius: 20px;
+  box-shadow: 1px 1px 19px 3px rgba(0,0,0,0.2);
+}
+
 #modal-clair-1 {
   background: rgba(15,219,186,0.9);
 }
@@ -127,10 +140,10 @@ body {
 
 /* The Close Button */
 .close {
-  color: #aaa;
+  color: #4DFFFF;
   float: right;
-  font-size: 28px;
-  font-weight: bold;
+  font-size: 30px;
+  font-weight: light;
   z-index: 3;
   position: relative;
 }
@@ -256,23 +269,26 @@ body {
   width: 80vw;
   position:relative;
   display:block;
-  margin-left: 10px;
-  margin-right: 10px;
+  margin-left: auto;
+  margin-right: auto;
   margin-top: 2vh;
   margin-bottom: 2vh;
   z-index: 2;
-  max-height: 70vh;
 }
 
 
 #illu-reproduction-3 {
   width: 85vw;
-  margin-left: -3vw;
+/*  margin-left: -3vw;*/
 }
 
 #illu-reproduction-4 {
   width: 85vw;
-  margin-left: -3vw;
+/*  margin-left: -3vw;*/
+}
+
+#illu-herisson{
+  width: 85vw;
 }
 
 
@@ -492,6 +508,11 @@ body {
     z-index:3;
 }
 
+#btnNext:hover,
+#btnNext:focus {
+  cursor: pointer;
+}
+
 
 .btnPrev {
     width: 17vw;
@@ -501,14 +522,29 @@ body {
     z-index:3;
 }
 
+#btnPrev:hover,
+#btnPrev:focus {
+  cursor: pointer;
+}
+
 
 
 #btnReprod4{
   display:none;
 }
 
+#btnReprod4:hover,
+#btnReprod4:focus {
+  cursor: pointer;
+}
+
 #btnReprod6{
   display:none;
+}
+
+#btnReprod6:hover,
+#btnReprod6:focus {
+  cursor: pointer;
 }
 
 /*#btnNext1 {
@@ -531,8 +567,8 @@ body {
     display:none;
 }
 
-.btnNext:hover,
-.btnNext:focus {
+.btnNext5:hover,
+.btnNext5:focus {
   cursor: pointer;
 }
 
@@ -541,7 +577,7 @@ body {
 .icone-rond {
   width: 17vw;
   left: 52vw;
-  top: 82vh;    
+  top: 87vh;    
   position:absolute;
   z-index:3;
 }
@@ -550,7 +586,7 @@ body {
 .icone-prev {
   width: 17vw;
   left: 28vw;
-  top: 82vh;
+  top: 87vh;
   position:absolute;
   z-index:3;
 }
@@ -560,6 +596,10 @@ body {
   cursor: pointer;
 }
 
+.icone-prev:hover,
+.icone-prev:focus {
+  cursor: pointer;
+}
 
 
 @media screen and (min-width: 900px) {

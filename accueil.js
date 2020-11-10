@@ -18,7 +18,9 @@ console.log(compteurVies);
 
 var attaqueRandom = ['attaqueRandom1', 'attaqueRandom2', 'attaqueRandom3'];
 
-var traverseeRoute = ['modalRouteSauve', 'modalRouteSauve', 'modalRouteSauve', 'modalRouteMort', 'modalRouteMort'];
+var traverseeRoute = ['modalRouteSauve', 'modalRouteSauve', 'modalRouteSauve', 'modalRouteSauve', 'modalRouteMort'];
+
+var nombrePetits = [3, 4, 5, 6, 7];
 
 localStorage.setItem('attackShown1', 'false');
 localStorage.setItem('attackShown2', 'false');
@@ -85,7 +87,7 @@ var x = setInterval(function() {
 var timer2;
 
 $('#btnReprod3').click(function() {
-	timer2 = 60000;
+	timer2 = 6000;
 }); 
 
 var x2 = setInterval(function() {
@@ -119,7 +121,7 @@ var x2 = setInterval(function() {
 var timer3;
 
 $('#btnReprod5').click(function() {
-	timer3 = 600000;
+	timer3 = 6000;
 }); 
 
 var x2 = setInterval(function() {
@@ -141,12 +143,79 @@ var x2 = setInterval(function() {
 
   // If the count down is finished, write some text 
   if (timer3 < 0) {
-    document.getElementById("timer2").innerHTML = "Votre portée est née !";
+    document.getElementById("timer3").innerHTML = "Votre portée est née !";
     $("#btexte-nid").css('display', 'none');
     $("#btnReprod6").css('display', 'block');
   }
 }, 1000);
 
+
+// TIMER PARADE NUPTIALE POUR HERISSON
+
+var timer4;
+
+$('#btnHerisson3').click(function() {
+	timer4 = 60000;
+}); 
+
+var x2 = setInterval(function() {
+
+	timer4 = timer4 - 1000;
+
+  // Time calculations for days, hours, minutes and seconds
+  var minutes = Math.floor((timer4 % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((timer4 % (1000 * 60)) / 1000);
+
+  // Display the result in the element with id="demo"
+
+  if (seconds < 10) {
+    document.getElementById("timer4").innerHTML = minutes + ":0" + seconds;
+  }
+  else {
+  	document.getElementById("timer4").innerHTML = minutes + ":" + seconds;
+  }
+
+  // If the count down is finished, write some text 
+  if (timer4 < 0) {
+    document.getElementById("timer4").innerHTML = "C'est fini !";
+    $("#btnHerisson4").css('display', 'block');
+  }
+}, 1000);
+
+
+
+// TIMER Gestation + nid POUR HERISSON
+
+var timer5;
+
+$('#btnHerisson5').click(function() {
+	timer5 = 600000;
+}); 
+
+var x2 = setInterval(function() {
+
+	timer5 = timer5 - 1000;
+
+  // Time calculations for days, hours, minutes and seconds
+  var minutes = Math.floor((timer5 % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((timer5 % (1000 * 60)) / 1000);
+
+  // Display the result in the element with id="demo"
+
+  if (seconds < 10) {
+    document.getElementById("timer5").innerHTML = minutes + ":0" + seconds;
+  }
+  else {
+  	document.getElementById("timer5").innerHTML = minutes + ":" + seconds;
+  }
+
+  // If the count down is finished, write some text 
+  if (timer3 < 0) {
+    document.getElementById("timer5").innerHTML = "Votre portée est née !";
+    $("#btexte-nid").css('display', 'none');
+    $("#btnHerisson6").css('display', 'block');
+  }
+}, 1000);
 
 
 // ZONE ARBOREE
@@ -462,6 +531,37 @@ $('#btnAccueilReprod5').click(function() {
 	$('#modalReproduction4').css('display','block');
 }); 
 
+//  REPRODUCTION 6
+
+$('#btnReprod6').click(function() {
+	$("#modalReproduction5").css('display', 'none');
+	$("#modalReproduction6").css('display', 'block');
+	var num3 = getRandomInt(nombrePetits.length);
+	var nombreNes = nombrePetits[num3];
+	$('#fin_texte2').append(nombreNes + ' petits hérissons !');
+	compteurVies = compteurVies + nombreNes;
+	console.log(compteurVies);
+}); 
+
+
+$("#modalReproduction6 .close").click(function() {
+	$("#modalReproduction6").css('display', 'none');
+});
+
+$(window).click(function(event) {
+	if (event.target.id == "modalReproduction6" ) {
+		$("#modalReproduction6").css('display', 'none');
+	}
+});
+
+$('#btnAccueilReprod6').click(function() {
+	$("#modalReproduction6").css('display', 'none');
+	$('#modalReproduction5').css('display','block');
+}); 
+
+$('#btnReprod7').click(function() {
+	$("#modalReproduction6").css('display', 'none');
+}); 
 
 
 // VEHICULE
@@ -523,12 +623,93 @@ $(window).click(function(event) {
 	}
 });
 
+$('#btnAccueilHerisson').click(function() {
+	$("#modalHerisson").css('display', 'none');
+}); 
 
+$('#btnHerisson2').click(function() {
+	$("#modalHerisson2").css('display','block');
+	$("#modalHerisson").css('display', 'none');
+}); 
 
+$("#modalHerisson2 .close").click(function() {
+	$("#modalHerisson2").css('display', 'none');
+});
 
+$(window).click(function(event) {
+	if (event.target.id == "modalHerisson2" ) {
+		$("#modalHerisson2").css('display', 'none');
+	}
+});
 
+$('#btnAccueilHerisson2').click(function() {
+	$("#modalHerisson2").css('display', 'none');
+	$("#modalHerisson").css('display', 'block');
+}); 
 
+$('#btnHerisson3').click(function() {
+	$("#modalHerisson3").css('display','block');
+	$("#modalHerisson2").css('display', 'none');
+}); 
 
+$("#modalHerisson3 .close").click(function() {
+	$("#modalHerisson3").css('display', 'none');
+});
 
+$(window).click(function(event) {
+	if (event.target.id == "modalHerisson3" ) {
+		$("#modalHerisson3").css('display', 'none');
+	}
+});
+
+$('#btnAccueilHerisson3').click(function() {
+	$("#modalHerisson3").css('display', 'none');
+	$("#modalHerisson2").css('display', 'block');
+}); 
+
+$('#btnHerisson4').click(function() {
+	$("#modalHerisson4").css('display','block');
+	$("#modalHerisson3").css('display', 'none');
+});
+
+$("#modalHerisson4 .close").click(function() {
+	$("#modalHerisson4").css('display', 'none');
+});
+
+$(window).click(function(event) {
+	if (event.target.id == "modalHerisson4" ) {
+		$("#modalHerisson4").css('display', 'none');
+	}
+});
+
+$('#btnAccueilHerisson4').click(function() {
+	$("#modalHerisson4").css('display', 'none');
+	$("#modalHerisson3").css('display', 'block');
+});  
+
+$('#btnHerisson5').click(function() {
+	$("#modalHerisson5").css('display','block');
+	$("#modalHerisson4").css('display', 'none');
+});
+
+$("#modalHerisson5 .close").click(function() {
+	$("#modalHerisson5").css('display', 'none');
+});
+
+$(window).click(function(event) {
+	if (event.target.id == "modalHerisson5" ) {
+		$("#modalHerisson5").css('display', 'none');
+	}
+});
+
+$('#btnAccueilHerisson5').click(function() {
+	$("#modalHerisson5").css('display', 'none');
+	$("#modalHerisson4").css('display', 'block');
+});  
+
+$('#btnHerisson6').click(function() {
+	$("#modalHerisson5").css('display','block');
+	$("#modalHerisson4").css('display', 'none');
+});
 
 
