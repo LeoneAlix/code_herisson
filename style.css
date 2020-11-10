@@ -141,6 +141,7 @@ body {
 /* The Close Button */
 .close {
   position:absolute;
+  right:8vw;
   color: #4DFFFF;
   float: right;
   font-size: 30px;
