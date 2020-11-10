@@ -140,12 +140,12 @@ body {
 
 /* The Close Button */
 .close {
+  position:absolute;
   color: #4DFFFF;
   float: right;
   font-size: 30px;
   font-weight: light;
   z-index: 3;
-  position: relative;
 }
 
 .close:hover,
