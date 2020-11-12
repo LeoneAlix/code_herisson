@@ -147,6 +147,41 @@ body {
 }
 
 
+#compteur-vie {
+  position:absolute;
+  width: 28vw;
+  height: 8vw;
+  top : 0vh;
+  left: 1vw;
+  border: 1px solid #0fdbba;
+  border-radius: 15px;
+
+}
+
+#compteur-vie2 {
+  position:relative;
+  width: 20vw;
+  height: 8vw;
+  top : 0vh;
+  left: 32vw;
+  border: 1px solid #0fdbba;
+  border-radius: 15px;
+
+}
+
+#compteur-vie3 {
+  position:relative;
+  width: 28vw;
+  height: 8vw;
+  top : 0vh;
+  left: 54vw;
+  border: 1px solid #0fdbba;
+  border-radius: 15px;
+
+}
+
+
+
 
 #attaqueRandom1{
   display:none;
@@ -259,19 +294,19 @@ body {
 
 .nav-col1 {
   position:absolute;
-  top: 20px;
+  top: 40px;
   left: 0vw;
 }
 
 .nav-col2 {
   position: absolute;
-  top: calc(81.5vw + 20px);
+  top: calc(81.5vw + 40px);
   left: 29.5vw;
 }
 
 .nav-col3 {
   position: absolute;
-  top: 20px;
+  top: 40px;
   left: 53.5vw;
 }
 
@@ -283,8 +318,11 @@ body {
 }
 
 
-
-
+.nav-li1 {
+  position:absolute;
+  top: 0px;
+  left: 1vw;
+}
 
 
 
@@ -314,6 +352,14 @@ body {
 
 #illu-herisson{
   width: 85vw;
+}
+
+.illu-mini {
+  width: 5vw;
+  position: relative;
+  left: 1vw;
+  top: 1px;
+  z-index: 3;
 }
 
 
