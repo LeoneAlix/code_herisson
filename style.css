@@ -1,7 +1,9 @@
 @font-face {
  font-family: "Tomorrow";
- src: url("/fonts/Tomorrow/Tomorrow-Black.ttf"),
-        url("/fonts/Tomorrow/Tomorrow-Black.eot"),
+ src: url("/fonts/Tomorrow/Tomorrow-Black.ttf");
+  src: url("/fonts/Tomorrow/Tomorrow-Black.eot");
+  src: url("/fonts/Tomorrow/Tomorrow-Regular.ttf");
+  src: url("/fonts/Tomorrow/Tomorrow-BlackItalic.ttf"),
         url("/fonts/Tomorrow/Tomorrow-BlackItalic.ttf"),
         url("/fonts/Tomorrow/Tomorrow-Bold.ttf"),
         url("/fonts/Tomorrow/Tomorrow-BoldItalic.ttf"),
