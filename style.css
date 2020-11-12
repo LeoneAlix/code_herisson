@@ -1,23 +1,23 @@
 @font-face {
  font-family: "Tomorrow";
- src: url("/fonts/Tomorrow/Tomorrow-Black.ttf") format("ttf"),
-        url("/fonts/Tomorrow/Tomorrow-BlackItalic.ttf") format("ttf"),
-        url("/fonts/Tomorrow/Tomorrow-Bold.ttf") format("ttf"),
-        url("/fonts/Tomorrow/Tomorrow-BoldItalic.ttf") format("ttf"),
-        url("/fonts/Tomorrow/Tomorrow-ExtraBold.ttf") format("ttf"),
-        url("/fonts/Tomorrow/Tomorrow-ExtraBoldItalic.ttf") format("ttf"),
-        url("/fonts/Tomorrow/Tomorrow-ExtraLight.ttf") format("ttf"),
-        url("/fonts/Tomorrow/Tomorrow-ExtraLightItalic.ttf") format("ttf"),
-        url("/fonts/Tomorrow/Tomorrow-Italic.ttf") format("ttf"),
-        url("/fonts/Tomorrow/Tomorrow-Light.ttf") format("ttf"),
-        url("/fonts/Tomorrow/Tomorrow-LightItalic.ttf") format("ttf"),
-        url("/fonts/Tomorrow/Tomorrow-Medium.ttf") format("ttf"),
-        url("/fonts/Tomorrow/Tomorrow-MediumItalic.ttf") format("ttf"),
-        url("/fonts/Tomorrow/Tomorrow-Regular.ttf") format("ttf"),
-        url("/fonts/Tomorrow/Tomorrow-SemiBold.ttf") format("ttf"),
-        url("/fonts/Tomorrow/Tomorrow-SemiBoldItalic.ttf") format("ttf"),
-        url("/fonts/Tomorrow/Tomorrow-Thin.ttf") format("ttf"),
-        url("/fonts/Tomorrow/Tomorrow-ThinItalic.ttf") format("ttf"),
+ src: url("/fonts/Tomorrow/Tomorrow-Black.ttf") format("truetype"),
+        url("/fonts/Tomorrow/Tomorrow-BlackItalic.ttf") format("truetype"),
+        url("/fonts/Tomorrow/Tomorrow-Bold.ttf") format("truetype"),
+        url("/fonts/Tomorrow/Tomorrow-BoldItalic.ttf") format("truetype"),
+        url("/fonts/Tomorrow/Tomorrow-ExtraBold.ttf") format("truetype"),
+        url("/fonts/Tomorrow/Tomorrow-ExtraBoldItalic.ttf") format("truetype"),
+        url("/fonts/Tomorrow/Tomorrow-ExtraLight.ttf") format("truetype"),
+        url("/fonts/Tomorrow/Tomorrow-ExtraLightItalic.ttf") format("truetype"),
+        url("/fonts/Tomorrow/Tomorrow-Italic.ttf") format("truetype"),
+        url("/fonts/Tomorrow/Tomorrow-Light.ttf") format("truetype"),
+        url("/fonts/Tomorrow/Tomorrow-LightItalic.ttf") format("truetype"),
+        url("/fonts/Tomorrow/Tomorrow-Medium.ttf") format("truetype"),
+        url("/fonts/Tomorrow/Tomorrow-MediumItalic.ttf") format("truetype"),
+        url("/fonts/Tomorrow/Tomorrow-Regular.ttf") format("truetype"),
+        url("/fonts/Tomorrow/Tomorrow-SemiBold.ttf") format("truetype"),
+        url("/fonts/Tomorrow/Tomorrow-SemiBoldItalic.ttf") format("truetype"),
+        url("/fonts/Tomorrow/Tomorrow-Thin.ttf") format("truetype"),
+        url("/fonts/Tomorrow/Tomorrow-ThinItalic.ttf") format("truetype"),
         ;
 }
 
@@ -149,10 +149,10 @@ body {
 
 #compteur-vie {
   position:absolute;
-  width: 28vw;
+  width: 40vw;
   height: 8vw;
   top : 0vh;
-  left: 1vw;
+  left: 0vw;
   border: 1px solid #0fdbba;
   border-radius: 15px;
 
@@ -160,21 +160,21 @@ body {
 
 #compteur-vie2 {
   position:relative;
-  width: 20vw;
+  width: 40vw;
   height: 8vw;
   top : 0vh;
-  left: 32vw;
+  left: 44vw;
   border: 1px solid #0fdbba;
   border-radius: 15px;
 
 }
 
 #compteur-vie3 {
-  position:relative;
+  position:absolute;
   width: 28vw;
   height: 8vw;
-  top : 0vh;
-  left: 54vw;
+  top : 53.5vh;
+  left: 56vw;
   border: 1px solid #0fdbba;
   border-radius: 15px;
 
@@ -357,10 +357,56 @@ body {
 .illu-mini {
   width: 5vw;
   position: relative;
-  left: 1vw;
-  top: 1px;
+  left: 2.5vw;
+  top: -0.5vh;
   z-index: 3;
 }
+
+.illu-mini-2 {
+  width: 5vw;
+  position: relative;
+  left: 2.5vw;
+  top: -1.8vh;
+  z-index: 3;
+}
+
+#vie1 {
+  display:none;
+}
+#vie2 {
+  display:none;
+}
+#vie3 {
+  display:none;
+}
+#vie4 {
+  display:none;
+}
+#vie5 {
+  display:none;
+}
+#vie6 {
+  display:none;
+}
+#vie7 {
+  display:none;
+}
+#vie8 {
+  display:none;
+}
+#vie9 {
+  display:none;
+}
+#vie10 {
+  display:none;
+}
+#vie11 {
+  display:none;
+}
+#vie12 {
+  display:block;
+}
+
 
 
 .illu-fond1 {
