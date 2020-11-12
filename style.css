@@ -1,6 +1,6 @@
 @font-face {
  font-family: "Tomorrow";
- src: local("/fonts/Tomorrow/Tomorrow-Black.ttf"),
+ src: url("/fonts/Tomorrow/Tomorrow-Black.ttf"),
         url("/fonts/Tomorrow/Tomorrow-Black.eot"),
         url("/fonts/Tomorrow/Tomorrow-BlackItalic.ttf"),
         url("/fonts/Tomorrow/Tomorrow-Bold.ttf"),
@@ -308,19 +308,19 @@ body {
 
 .nav-col1 {
   position:absolute;
-  top: 40px;
+  top: 44px;
   left: 0vw;
 }
 
 .nav-col2 {
   position: absolute;
-  top: calc(81.5vw + 40px);
+  top: calc(81.5vw + 44px);
   left: 29.5vw;
 }
 
 .nav-col3 {
   position: absolute;
-  top: 40px;
+  top: 44px;
   left: 53.5vw;
 }
 

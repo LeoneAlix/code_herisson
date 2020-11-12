@@ -235,6 +235,9 @@ $(window).click(function(event) {
 	}
 });
 
+$('#btnAccueilArbore').click(function() {
+	$("#modalArbore").css('display', 'none');
+}); 
 
 
 
@@ -256,6 +259,9 @@ $(window).click(function(event) {
 	}
 });
 
+$('#btnAccueilHerbace').click(function() {
+	$("#modalHerbace").css('display', 'none');
+}); 
 
 
 // ZONE ARTIFICIALISEE
@@ -275,6 +281,9 @@ $(window).click(function(event) {
 	}
 });
 
+$('#btnAccueilArtif').click(function() {
+	$("#modalArtif").css('display', 'none');
+}); 
 
 
 // ROUTE
@@ -582,6 +591,9 @@ $(window).click(function(event) {
 	}
 });
 
+$('#btnAccueilVehicule').click(function() {
+	$("#modalVehicule").css('display', 'none');
+});
 
 
 // HUMAIN
