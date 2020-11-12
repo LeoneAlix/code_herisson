@@ -1,3 +1,27 @@
+@font-face {
+ font-family: "Tomorrow";
+ src: url("/assets/Tomorrow/Tomorrow-Black.ttf") format("ttf"),
+        url("/assets/Tomorrow/Tomorrow-BlackItalic.ttf") format("ttf"),
+        url("/assets/Tomorrow/Tomorrow-Bold.ttf") format("ttf"),
+        url("/assets/Tomorrow/Tomorrow-BoldItalic.ttf") format("ttf"),
+        url("/assets/Tomorrow/Tomorrow-ExtraBold.ttf") format("ttf"),
+        url("/assets/Tomorrow/Tomorrow-ExtraBoldItalic.ttf") format("ttf"),
+        url("/assets/Tomorrow/Tomorrow-ExtraLight.ttf") format("ttf"),
+        url("/assets/Tomorrow/Tomorrow-ExtraLightItalic.ttf") format("ttf"),
+        url("/assets/Tomorrow/Tomorrow-Italic.ttf") format("ttf"),
+        url("/assets/Tomorrow/Tomorrow-Light.ttf") format("ttf"),
+        url("/assets/Tomorrow/Tomorrow-LightItalic.ttf") format("ttf"),
+        url("/assets/Tomorrow/Tomorrow-Medium.ttf") format("ttf"),
+        url("/assets/Tomorrow/Tomorrow-MediumItalic.ttf") format("ttf"),
+        url("/assets/Tomorrow/Tomorrow-Regular.ttf") format("ttf"),
+        url("/assets/Tomorrow/Tomorrow-SemiBold.ttf") format("ttf"),
+        url("/assets/Tomorrow/Tomorrow-SemiBoldItalic.ttf") format("ttf"),
+        url("/assets/Tomorrow/Tomorrow-Thin.ttf") format("ttf"),
+        url("/assets/Tomorrow/Tomorrow-ThinItalic.ttf") format("ttf"),
+        ;
+}
+
+
 body {
   background-color: #1238E0;
   margin-top:10px;
