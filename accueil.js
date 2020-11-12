@@ -218,6 +218,39 @@ var x2 = setInterval(function() {
 }, 1000);
 
 
+// TIMER ROULER EN BOULE
+
+var timer6 = 0;
+
+$('#btnVehicule2').click(function() {
+	timer6 = 20;
+}); 
+
+var x = setInterval(function() {
+
+	timer6 = timer6 - 1;
+
+  // Time calculations for days, hours, minutes and seconds
+  var minutes = Math.floor((timer6 % (60 * 60)) / 60);
+  var seconds = Math.floor((timer6 % 60));
+
+  // Display the result in the element with id="demo"
+
+  if (seconds < 10) {
+    document.getElementById("timer6").innerHTML = minutes + ":0" + seconds;
+  }
+  else {
+  	document.getElementById("timer6").innerHTML = minutes + ":" + seconds;
+  }
+
+  // If the count down is finished, write some text 
+  if (timer6 < 0) {
+    document.getElementById("timer6").innerHTML = "Vous pouvez repartir";
+    $("#btnVehicule3").css('display', 'block');
+  }
+}, 1000);
+
+
 // ZONE ARBOREE
 
 $('#btnArbore').click(function() {
@@ -595,6 +628,32 @@ $('#btnAccueilVehicule').click(function() {
 	$("#modalVehicule").css('display', 'none');
 });
 
+// VEHICULE 2
+
+$('#btnVehicule2').click(function() {
+	$("#modalVehicule").css('display', 'none');
+	$('#modalVehicule2').css('display','block');
+});
+
+$("#modalVehicule2 .close").click(function() {
+	$("#modalVehicule2").css('display', 'none');
+});
+
+$(window).click(function(event) {
+	if (event.target.id == "modalVehicule2" ) {
+		$("#modalVehicule2").css('display', 'none');
+	}
+});
+
+$('#btnAccueilVehicule2').click(function() {
+	$("#modalVehicule2").css('display', 'none');
+	$("#modalVehicule").css('display', 'block');
+});
+
+$('#btnVehicule3').click(function() {
+	$("#modalVehicule2").css('display', 'none');
+});
+
 
 // HUMAIN
 
@@ -614,7 +673,9 @@ $(window).click(function(event) {
 	}
 });
 
-
+$('#btnAccueilHumain').click(function() {
+	$("#modalHumain").css('display', 'none');
+});
 
 
 // HERISSON
