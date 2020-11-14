@@ -27,7 +27,7 @@ $('#boutonForm').click(function() {
 	console.log(compteurVies);
 
 	$("#form1").css('display', 'none');
-	$("#btnNext5").css('display', 'block');
+	$("#btnNext6").css('display', 'block');
 
 	// $('#fin_texte').append(testin + 'hérissons embarqués ! Il faudra tout donner pour qu’aucun de vous ne reste sur le bas-côté. Votre objectif sera d’atteindre le centre de transformation procédural avec le plus d’individus possible.');
 });
@@ -37,7 +37,7 @@ $('#boutonForm').click(function() {
 
 
 
-// INTRODUCTION 1 -> 2
+// INTRODUCTION 0 -> 1
 
 
 $('#btnNext1').click(function() {
@@ -60,7 +60,7 @@ $('#btnPrev1').click(function() {
 }); 
 
 
-// INTRODUCTION 2 -> 3
+// INTRODUCTION 1 -> 2
 
 
 $('#btnNext2').click(function() {
@@ -87,57 +87,89 @@ $('#btnPrev2').click(function() {
 
 
 
-// INTRODUCTION 3 -> 4
+// INTRODUCTION 2 -> 3
 
 
 $('#btnNext3').click(function() {
 	$('#modalIntro-3').css('display','block');
+	$('#modalIntro-2').css('display','none');
 }); 
 
 
 $("#modalIntro-3 .close").click(function() {
 	$("#modalIntro-3").css('display', 'none');
-	$("#modalIntro-2").css('display', 'none');
-	$("#modalIntro-1").css('display', 'none');
 });
 
 $(window).click(function(event) {
 	if (event.target.id == "modalIntro-3" ) {
 		$("#modalIntro-3").css('display', 'none');
-		$("#modalIntro-2").css('display', 'none');
-		$("#modalIntro-1").css('display', 'none');
 	}
 });
 $('#btnPrev3').click(function() {
 	$("#modalIntro-3").css('display', 'none');
+	$("#modalIntro-2").css('display', 'block');
 }); 
 
 
-// INTRODUCTION 4 -> 5
+
+
+// INTRODUCTION 3 -> 4
 
 
 $('#btnNext4').click(function() {
 	$('#modalIntro-4').css('display','block');
+	$("#modalIntro-3").css('display', 'none');
 }); 
 
 
 $("#modalIntro-4 .close").click(function() {
 	console.log('close 4');
 	$("#modalIntro-4").css('display', 'none');
-	$("#modalIntro-3").css('display', 'none');
-	$("#modalIntro-2").css('display', 'none');
-	$("#modalIntro-1").css('display', 'none');
 
 });
 
 $(window).click(function(event) {
 	if (event.target.id == "modalIntro-4" ) {
 		$("#modalIntro-4").css('display', 'none');
-		$("#modalIntro-3").css('display', 'none');
-		$("#modalIntro-2").css('display', 'none');
-		$("#modalIntro-1").css('display', 'none');
 	}
+
 });
 $('#btnPrev4').click(function() {
 	$("#modalIntro-4").css('display', 'none');
+	$("#modalIntro-3").css('display', 'block');
 }); 
+
+// INTRODUCTION 4 -> 5
+
+
+$('#btnNext5').click(function() {
+	$('#modalIntro-5').css('display','block');
+	$("#modalIntro-4").css('display', 'none');
+}); 
+
+
+$("#modalIntro-5 .close").click(function() {
+	console.log('close 5');
+	$("#modalIntro-5").css('display', 'none');
+
+});
+
+$(window).click(function(event) {
+	if (event.target.id == "modalIntro-5" ) {
+		$("#modalIntro-5").css('display', 'none');
+	}
+
+});
+$('#btnPrev5').click(function() {
+	$("#modalIntro-5").css('display', 'none');
+	$("#modalIntro-4").css('display', 'block');
+}); 
+
+
+
+
+
+
+
+
+

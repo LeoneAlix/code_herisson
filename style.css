@@ -145,7 +145,7 @@ body {
 #accueil-app {
   background-image: url(assets/fond_accueil.png);
   background-size: 130%;
-  background-position: center -2vw;
+  background-position: center -6vw;
 }
 
 #modalIntro-1 {
@@ -169,6 +169,12 @@ body {
 #modalIntro-4 {
   background-image: url(assets/fond_intro4.png);
   background-size: 120%;
+  background-position: center -10vw;
+}
+
+#modalIntro-5 {
+  background-image: url(assets/fond_intro5.png);
+  background-size: 130%;
   background-position: center -10vw;
 }
 
@@ -202,8 +208,8 @@ body {
   padding: 1px;
   width: 28vw;
   height: 9vw;
-  top : 53.3vh;
-  left: 56.5vw;
+  top : 52.5vh;
+  left: 5vw;
   border: 1px solid #0fdbba;
   border-radius: 15px;
 
@@ -277,8 +283,8 @@ body {
   border-radius: 20px;
   border:0.5vw solid #0fdbba;
   margin-top: 15vw;
-  margin-left:10vw;
-  margin-right:10vw;
+  margin-left:8vw;
+  margin-right:8vw;
   padding:3vw;
   font-size: 7vw;
   text-align:center;
@@ -293,9 +299,9 @@ body {
   background-color: rgba(255, 255, 255, 0.7);
   border-radius: 20px;
   border:0.5vw solid #0fdbba;
-  margin-left:10vw;
-  margin-right:10vw;
-  margin-top:30vw;
+  margin-left:8vw;
+  margin-right:8vw;
+  margin-top:20vw;
   padding:3vw;
   font-size: 22px;
   text-align:center;
@@ -393,6 +399,22 @@ body {
 
 .illu-mini-2 {
   width: 5vw;
+  position: relative;
+  left: 2.5vw;
+  top: -1.8vh;
+  z-index: 1;
+}
+
+.illu-mini-nour {
+  width: 3vw;
+  position: relative;
+  left: 2.5vw;
+  top: -0.5vh;
+  z-index: 1;
+}
+
+.illu-mini-nour-2 {
+  width: 3vw;
   position: relative;
   left: 2.5vw;
   top: -1.8vh;
@@ -713,7 +735,7 @@ body {
     margin-top: 55vw;
 }*/
 
-#btnNext5 {
+#btnNext6 {
     display:none;
 }
 
