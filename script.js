@@ -65,23 +65,23 @@ $('#btnPrev1').click(function() {
 
 $('#btnNext2').click(function() {
 	$('#modalIntro-2').css('display','block');
+	$('#modalIntro-1').css('display','none');
 }); 
 
 
 $("#modalIntro-2 .close").click(function() {
 	$("#modalIntro-2").css('display', 'none');
-	$("#modalIntro-1").css('display', 'none');
 });
 
 $(window).click(function(event) {
 	if (event.target.id == "modalIntro-2" ) {
 		$("#modalIntro-2").css('display', 'none');
-		$("#modalIntro-1").css('display', 'none');
 	}
 });
 
 $('#btnPrev2').click(function() {
 	$("#modalIntro-2").css('display', 'none');
+	$('#modalIntro-1').css('display','block');
 }); 
 
 

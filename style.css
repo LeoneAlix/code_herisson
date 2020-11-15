@@ -121,6 +121,8 @@ body {
 }
 
 
+/*MODAL DE L'INTRODUCTION*/
+
 .modal-2 {
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
@@ -137,10 +139,13 @@ body {
 
 /* Modal intro Content/Box */
 .modal-2-content {
-  /*background: #1238E0;*/
   margin-top:0vw;
   width: 100%;
 }
+
+
+
+/* ENCHAINEMENT DES PAGES D INTRO */
 
 #accueil-app {
   background-image: url(assets/fond_accueil.png);
@@ -179,11 +184,125 @@ body {
 }
 
 
+
+/*MODALS DU TUTO */
+
+.modal-tuto {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 3; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  max-width: 100%;
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(0, 0, 0, 0.5);
+  background-repeat: no-repeat;
+}
+
+/* Modal tuto Content/Box */
+.modal-content-tuto {
+  background: rgba(255, 255, 255, 0.7)
+  margin-top:0vw;
+  width: 100%;
+}
+
+.popup-tuto {
+  width:80vw;
+  text-align: center;
+  color: #1238E0;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 20px;
+  border:0.5vw solid #0fdbba;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 80vw;
+  padding:10px;
+  font-size: 18px;
+  text-align:center;
+  z-index:3;
+  max-width: 100%;
+}
+
+.popup-tuto-2 {
+  width:48vw;
+  text-align: center;
+  color: #1238E0;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 20px;
+  border:0.5vw solid #0fdbba;
+  margin-right: auto;
+  margin-left: 42vw;
+  margin-top: 60vw;
+  padding:10px;
+  font-size: 18px;
+  text-align:center;
+  z-index:3;
+  max-width: 100%;
+}
+
+.popup-tuto-3 {
+  width:48vw;
+  text-align: center;
+  color: #1238E0;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 20px;
+  border:0.5vw solid #0fdbba;
+  margin-right: auto;
+  margin-left: 2vw;
+  margin-top: 60vw;
+  padding:10px;
+  font-size: 18px;
+  text-align:center;
+  z-index:3;
+  max-width: 100%;
+}
+
+.highlight {
+  transform: scale(1.1);
+  position: relative;
+/*  filter: brightness(1.1);*/
+  z-index: 3;
+}
+
+.move-image {
+  transform: translateY(-55vh) scale(2);
+}
+.move-image2 {
+  transform: translateY(-40vh) scale(2);
+}
+.move-image3 {
+  transform: translateX(30vw) translateY(7vh) scale(2);
+}
+.move-image4 {
+  transform: translateX(30vw) translateY(-7vh) scale(2);
+}
+.move-image5 {
+  transform: translateX(30vw) translateY(-25vh) scale(2);
+}
+.move-image6 {
+  transform: translateX(30vw) translateY(-40vh) scale(2);
+}
+.move-image7 {
+  transform: translateX(-25vw) translateY(7vh) scale(2);
+}
+.move-image8 {
+  transform: translateX(-25vw) translateY(-8vh) scale(2);
+}
+.move-image9 {
+  transform: translateX(-25vw) translateY(-25vh) scale(2);
+}
+
+
+/* COMPTEURS DE VIE, NOUR, TEMPS */
+
+
 #compteur-vie {
   position:absolute;
   padding: 1px;
-  width: 40vw;
-  height: 9vw;
+  width: 135px;
+  height: 35px;
   top : 0vh;
   left: 0vw;
   border: 1px solid #0fdbba;
@@ -194,8 +313,8 @@ body {
 #compteur-vie2 {
   position:relative;
   padding: 1px;
-  width: 40vw;
-  height: 9vw;
+  width: 135px;
+  height: 35px;
   top : 0vh;
   left: 44vw;
   border: 1px solid #0fdbba;
@@ -206,17 +325,44 @@ body {
 #compteur-vie3 {
   position:absolute;
   padding: 1px;
-  width: 28vw;
-  height: 9vw;
-  top : 52.5vh;
+  width: 95px;
+  height: 35px;
+  top : 52vh;
   left: 5vw;
   border: 1px solid #0fdbba;
   border-radius: 15px;
 
 }
 
+/* NOUVELLES REGLES ET ATTAQUES RANDOM */
+
+.modal-regles {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100vw; /* Full width */
+  max-width: 100%;
+  height: 100vh; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.3); /* Black w/ opacity */
+}
 
 
+.modal-regles-content {
+  background: rgba(255, 255, 255, 0.7);
+  margin-top: 2vh;
+  margin-left: auto;
+  margin-right:auto;
+  padding: 10px;
+  width: 85%;
+  height:95%;
+  border: 1px solid #0fdbba;
+  border-radius: 20px;
+  box-shadow: 1px 1px 19px 3px rgba(0,0,0,0.2);
+}
 
 #attaqueRandom1{
   display:none;
@@ -390,35 +536,90 @@ body {
 }
 
 .illu-mini {
-  width: 5vw;
-  position: relative;
-  left: 2.5vw;
-  top: -0.5vh;
-  z-index: 1;
+  width: 20px;
+  position: absolute;
+/*  left: 3px;
+  top: -0.5px;*/
+/*  z-index: 1;*/
 }
 
-.illu-mini-2 {
-  width: 5vw;
-  position: relative;
-  left: 2.5vw;
-  top: -1.8vh;
-  z-index: 1;
+/*.illu-mini-2 {
+  width: 20px;
+  position: absolute;
+  left: 3px;
+  top: -1.8px;
+/*  z-index: 1;*/
+
+.illu-mini-col1{
+  left: 5px;
+/*  top: -0.5px;*/
+}
+.illu-mini-col2{
+  left: 26px;
+/*  top: -0.5px;*/
+}
+.illu-mini-col3{
+  left: 47px;
+/*  top: -0.5px;*/
+}
+.illu-mini-col4{
+  left: 68px;
+}
+.illu-mini-col5{
+  left: 89px;
+}
+.illu-mini-col6{
+  left: 110px;
+}
+.illu-mini-li1{
+  top: 2px;  
+}
+.illu-mini-li2{
+  top: 20px; 
+}
+
+.illu-mini-col1-nour{
+  left: 7px;
+/*  top: -0.5px;*/
+}
+.illu-mini-col2-nour{
+  left: 22px;
+/*  top: -0.5px;*/
+}
+.illu-mini-col3-nour{
+  left: 37px;
+/*  top: -0.5px;*/
+}
+.illu-mini-col4-nour{
+  left: 52px;
+}
+.illu-mini-col5-nour{
+  left: 67px;
+}
+.illu-mini-col6-nour{
+  left: 82px;
+}
+.illu-mini-li1-nour{
+  top: 4px;  
+}
+.illu-mini-li2-nour{
+  top: 20px; 
 }
 
 .illu-mini-nour {
-  width: 3vw;
-  position: relative;
-  left: 2.5vw;
-  top: -0.5vh;
-  z-index: 1;
+  width: 10px;
+  position: absolute;
+/*  left: 2.5vw;
+  top: -0.5vh;*/
+/*  z-index: 1;*/
 }
 
 .illu-mini-nour-2 {
   width: 3vw;
-  position: relative;
-  left: 2.5vw;
-  top: -1.8vh;
-  z-index: 1;
+  position: absolute;
+/*  left: 2.5vw;
+  top: -1.8vh;*/
+/*  z-index: 1;*/
 }
 
 #vie1 {
@@ -455,7 +656,7 @@ body {
   display:none;
 }
 #vie12 {
-  display:block;
+  display:none;
 }
 
 
@@ -567,6 +768,7 @@ body {
 
 #btnArbore {
   width: 32vw;
+  transition : 0.7s ease-in-out;
 }
 
 #btnArbore:hover,
@@ -579,6 +781,7 @@ body {
   width: 32vw;
   display: block;
   margin-top: -3vw;
+  transition : 0.7s ease-in-out;
 }
 
 #btnHerbace:hover,
@@ -592,6 +795,7 @@ body {
   display: block;
   margin-left: 1vw;
   margin-top: -2.5vw; 
+  transition : 0.7s ease-in-out;
 }
 
 #btnArtif:hover,
@@ -603,6 +807,7 @@ body {
   width: 32vw;
   margin-left: 0vw;
   margin-top: -13vw;
+  transition : 0.7s ease-in-out;
 }
 
 #btnRoute:hover,
@@ -613,6 +818,7 @@ body {
 #btnNourriture {
   width: 34vw;
   margin-left: 0.5vw;
+  transition : 0.7s ease-in-out;
 }
 
 #btnNourriture:hover,
@@ -625,6 +831,7 @@ body {
   display: block;
   margin-top: -4vw;
   margin-left: -2vw;
+  transition : 0.7s ease-in-out; 
 }
 
 #btnReproduction:hover,
@@ -635,6 +842,7 @@ body {
 
 #btnVehicule {
   width: 32vw;
+  transition : 0.7s ease-in-out;
 }
 
 #btnVehicule:hover,
@@ -646,6 +854,7 @@ body {
   width: 35vw;
   margin-left: -2vw;
   margin-top: -4.5vw;
+  transition : 0.7s ease-in-out;
 }
 
 #btnHumain:hover,
@@ -654,9 +863,10 @@ body {
 }
 
 #btnHerisson {
-    width: 32vw;
-    margin-left: -1vw;
-    margin-top: -12vw;
+  width: 32vw;
+  margin-left: -1vw;
+  margin-top: -12vw;
+  transition : 0.7s ease-in-out;
 }
 
 #btnHerisson:hover,
@@ -697,7 +907,7 @@ body {
 
 
 
-#btnReprod4{
+#btnReprod4 {
   display:none;
 }
 
@@ -715,7 +925,7 @@ body {
   cursor: pointer;
 }
 
-#btnVehicule3{
+#btnVehicule3 {
   display: none;
 }
 
@@ -753,6 +963,7 @@ body {
   position:absolute;
   z-index:3;
 }
+
 
 
 .icone-prev {
