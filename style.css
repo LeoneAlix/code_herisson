@@ -1,50 +1,63 @@
 @font-face {
  font-family: "Tomorrow";
- src: url("/fonts/Tomorrow/Tomorrow-Black.ttf");
-  src: url("/fonts/Tomorrow/Tomorrow-Black.eot");
-  src: url("/fonts/Tomorrow/Tomorrow-Black.otf");
-  src: url("/fonts/Tomorrow/Tomorrow-Black.svg");
-  src: url("/fonts/Tomorrow/Tomorrow-Black.woff");
-  src: url("/fonts/Tomorrow/Tomorrow-Black.woff2");
-  src: url("/fonts/Tomorrow/Tomorrow-Regular.ttf");
-  src: url("/fonts/Tomorrow/Tomorrow-BlackItalic.ttf");
-  src: url("/fonts/Tomorrow/Tomorrow-BlackItalic.ttf");
-  src: url("/fonts/Tomorrow/Tomorrow-Bold.ttf");
-  src: url("/fonts/Tomorrow/Tomorrow-Bold.eot");
-  src: url("/fonts/Tomorrow/Tomorrow-Bold.otf");
-  src: url("/fonts/Tomorrow/Tomorrow-Bold.svg");
-  src: url("/fonts/Tomorrow/Tomorrow-Bold.woff");
-  src: url("/fonts/Tomorrow/Tomorrow-Bold.woff2");
-  src: url("/fonts/Tomorrow/Tomorrow-BoldItalic.ttf");
-  src: url("/fonts/Tomorrow/Tomorrow-ExtraBold.ttf");
-  src: url("/fonts/Tomorrow/Tomorrow-ExtraBoldItalic.ttf");
-  src: url("/fonts/Tomorrow/Tomorrow-ExtraLight.ttf");
-  src: url("/fonts/Tomorrow/Tomorrow-ExtraLightItalic.ttf");
-  src: url("/fonts/Tomorrow/Tomorrow-Italic.ttf");
-  src: url("/fonts/Tomorrow/Tomorrow-Light.ttf");
-  src: url("/fonts/Tomorrow/Tomorrow-Light.eot");
-  src: url("/fonts/Tomorrow/Tomorrow-Light.otf");
-  src: url("/fonts/Tomorrow/Tomorrow-Light.svg");
-  src: url("/fonts/Tomorrow/Tomorrow-Light.woff");
-  src: url("/fonts/Tomorrow/Tomorrow-Light.woff2");
-  src: url("/fonts/Tomorrow/Tomorrow-LightItalic.ttf");
-  src: url("/fonts/Tomorrow/Tomorrow-Medium.ttf");
-  src: url("/fonts/Tomorrow/Tomorrow-MediumItalic.ttf");
   src: url("/fonts/Tomorrow/Tomorrow-Regular.ttf");
   src: url("/fonts/Tomorrow/Tomorrow-Regular.eot");
   src: url("/fonts/Tomorrow/Tomorrow-Regular.otf");
   src: url("/fonts/Tomorrow/Tomorrow-Regular.svg");
   src: url("/fonts/Tomorrow/Tomorrow-Regular.woff");
   src: url("/fonts/Tomorrow/Tomorrow-Regular.woff2");
-  src: url("/fonts/Tomorrow/Tomorrow-SemiBold.ttf");
-  src: url("/fonts/Tomorrow/Tomorrow-SemiBoldItalic.ttf");
+  src: url("/fonts/Tomorrow/Tomorrow-Regular.ttf");
+}
+
+@font-face {
+ font-family: "Tomorrow-Black";
+ src: url("/fonts/Tomorrow/Tomorrow-Black.ttf");
+  src: url("/fonts/Tomorrow/Tomorrow-Black.eot");
+  src: url("/fonts/Tomorrow/Tomorrow-Black.otf");
+  src: url("/fonts/Tomorrow/Tomorrow-Black.svg");
+  src: url("/fonts/Tomorrow/Tomorrow-Black.woff");
+  src: url("/fonts/Tomorrow/Tomorrow-Black.woff2");
+}
+
+@font-face {
+ font-family: "Tomorrow-Bold";
+  src: url("/fonts/Tomorrow/Tomorrow-Bold.ttf");
+  src: url("/fonts/Tomorrow/Tomorrow-Bold.eot");
+  src: url("/fonts/Tomorrow/Tomorrow-Bold.otf");
+  src: url("/fonts/Tomorrow/Tomorrow-Bold.svg");
+  src: url("/fonts/Tomorrow/Tomorrow-Bold.woff");
+  src: url("/fonts/Tomorrow/Tomorrow-Bold.woff2");
+}
+
+@font-face {
+font-family: "Tomorrow-Italic";
+  src: url("/fonts/Tomorrow/Tomorrow-Italic.ttf");
+}
+
+@font-face {
+font-family: "Tomorrow-Light";
+  src: url("/fonts/Tomorrow/Tomorrow-Light.ttf");
+  src: url("/fonts/Tomorrow/Tomorrow-Light.eot");
+  src: url("/fonts/Tomorrow/Tomorrow-Light.otf");
+  src: url("/fonts/Tomorrow/Tomorrow-Light.svg");
+  src: url("/fonts/Tomorrow/Tomorrow-Light.woff");
+  src: url("/fonts/Tomorrow/Tomorrow-Light.woff2");
+}
+
+@font-face {
+font-family: "Tomorrow-Medium";
+  src: url("/fonts/Tomorrow/Tomorrow-Medium.ttf");
+  src: url("/fonts/Tomorrow/Tomorrow-MediumItalic.ttf");
+}
+
+@font-face {
+font-family: "Tomorrow-Thin";
   src: url("/fonts/Tomorrow/Tomorrow-Thin.ttf");
   src: url("/fonts/Tomorrow/Tomorrow-Thin.otf");
   src: url("/fonts/Tomorrow/Tomorrow-Thin.eot");
   src: url("/fonts/Tomorrow/Tomorrow-Thin.svg");
   src: url("/fonts/Tomorrow/Tomorrow-Thin.woff");
   src: url("/fonts/Tomorrow/Tomorrow-Thin.woff2");
-  src: url("/fonts/Tomorrow/Tomorrow-ThinItalic.ttf");
 }
 
 
