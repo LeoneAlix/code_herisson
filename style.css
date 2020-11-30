@@ -1,63 +1,76 @@
 @font-face {
  font-family: "Tomorrow";
-  src: url("/fonts/Tomorrow/Tomorrow-Regular.ttf");
-  src: url("/fonts/Tomorrow/Tomorrow-Regular.eot");
-  src: url("/fonts/Tomorrow/Tomorrow-Regular.otf");
-  src: url("/fonts/Tomorrow/Tomorrow-Regular.svg");
-  src: url("/fonts/Tomorrow/Tomorrow-Regular.woff");
-  src: url("/fonts/Tomorrow/Tomorrow-Regular.woff2");
-  src: url("/fonts/Tomorrow/Tomorrow-Regular.ttf");
+  src: url("/fonts/Tomorrow/Tomorrow-Regular.ttf"),
+    url("/fonts/Tomorrow/Tomorrow-Regular.eot"),
+    url("/fonts/Tomorrow/Tomorrow-Regular.otf"),
+    url("/fonts/Tomorrow/Tomorrow-Regular.svg"),
+    url("/fonts/Tomorrow/Tomorrow-Regular.woff"),
+    url("/fonts/Tomorrow/Tomorrow-Regular.woff2"),
+    url("/fonts/Tomorrow/Tomorrow-Regular.ttf");
+  font-weight: 400;
+  font-style:normal;
 }
 
 @font-face {
- font-family: "Tomorrow-Black";
- src: url("/fonts/Tomorrow/Tomorrow-Black.ttf");
-  src: url("/fonts/Tomorrow/Tomorrow-Black.eot");
-  src: url("/fonts/Tomorrow/Tomorrow-Black.otf");
-  src: url("/fonts/Tomorrow/Tomorrow-Black.svg");
-  src: url("/fonts/Tomorrow/Tomorrow-Black.woff");
-  src: url("/fonts/Tomorrow/Tomorrow-Black.woff2");
+ font-family: "Tomorrow";
+ src: url("/fonts/Tomorrow/Tomorrow-Black.ttf"),
+  url("/fonts/Tomorrow/Tomorrow-Black.eot"),
+  url("/fonts/Tomorrow/Tomorrow-Black.otf"),
+  url("/fonts/Tomorrow/Tomorrow-Black.svg"),
+  url("/fonts/Tomorrow/Tomorrow-Black.woff"),
+  url("/fonts/Tomorrow/Tomorrow-Black.woff2");
+  font-weight: 900;
+  font-style:normal;
 }
 
 @font-face {
- font-family: "Tomorrow-Bold";
-  src: url("/fonts/Tomorrow/Tomorrow-Bold.ttf");
-  src: url("/fonts/Tomorrow/Tomorrow-Bold.eot");
-  src: url("/fonts/Tomorrow/Tomorrow-Bold.otf");
-  src: url("/fonts/Tomorrow/Tomorrow-Bold.svg");
-  src: url("/fonts/Tomorrow/Tomorrow-Bold.woff");
-  src: url("/fonts/Tomorrow/Tomorrow-Bold.woff2");
+ font-family: "Tomorrow";
+  src: url("/fonts/Tomorrow/Tomorrow-Bold.ttf"),
+    url("/fonts/Tomorrow/Tomorrow-Bold.eot"),
+    url("/fonts/Tomorrow/Tomorrow-Bold.otf"),
+    url("/fonts/Tomorrow/Tomorrow-Bold.svg"),
+    url("/fonts/Tomorrow/Tomorrow-Bold.woff"),
+    url("/fonts/Tomorrow/Tomorrow-Bold.woff2");
+  font-weight: 700;
+  font-style:normal;
 }
 
 @font-face {
-font-family: "Tomorrow-Italic";
+font-family: "Tomorrow";
   src: url("/fonts/Tomorrow/Tomorrow-Italic.ttf");
+  font-weight: 400;
+  font-style:italic;
 }
 
 @font-face {
-font-family: "Tomorrow-Light";
-  src: url("/fonts/Tomorrow/Tomorrow-Light.ttf");
-  src: url("/fonts/Tomorrow/Tomorrow-Light.eot");
-  src: url("/fonts/Tomorrow/Tomorrow-Light.otf");
-  src: url("/fonts/Tomorrow/Tomorrow-Light.svg");
-  src: url("/fonts/Tomorrow/Tomorrow-Light.woff");
-  src: url("/fonts/Tomorrow/Tomorrow-Light.woff2");
+font-family: "Tomorrow";
+  src: url("/fonts/Tomorrow/Tomorrow-Light.ttf"),
+  url("/fonts/Tomorrow/Tomorrow-Light.eot"),
+  url("/fonts/Tomorrow/Tomorrow-Light.otf"),
+  url("/fonts/Tomorrow/Tomorrow-Light.svg"),
+  url("/fonts/Tomorrow/Tomorrow-Light.woff"),
+  url("/fonts/Tomorrow/Tomorrow-Light.woff2");
+  font-weight: 300;
+  font-style:normal;
 }
 
 @font-face {
-font-family: "Tomorrow-Medium";
+font-family: "Tomorrow";
   src: url("/fonts/Tomorrow/Tomorrow-Medium.ttf");
-  src: url("/fonts/Tomorrow/Tomorrow-MediumItalic.ttf");
+  font-weight: 500;
+  font-style:normal;
 }
 
 @font-face {
-font-family: "Tomorrow-Thin";
-  src: url("/fonts/Tomorrow/Tomorrow-Thin.ttf");
-  src: url("/fonts/Tomorrow/Tomorrow-Thin.otf");
-  src: url("/fonts/Tomorrow/Tomorrow-Thin.eot");
-  src: url("/fonts/Tomorrow/Tomorrow-Thin.svg");
-  src: url("/fonts/Tomorrow/Tomorrow-Thin.woff");
-  src: url("/fonts/Tomorrow/Tomorrow-Thin.woff2");
+font-family: "Tomorrow";
+  src: url("/fonts/Tomorrow/Tomorrow-Thin.ttf"),
+  url("/fonts/Tomorrow/Tomorrow-Thin.otf"),
+  url("/fonts/Tomorrow/Tomorrow-Thin.eot"),
+  url("/fonts/Tomorrow/Tomorrow-Thin.svg"),
+  url("/fonts/Tomorrow/Tomorrow-Thin.woff"),
+  url("/fonts/Tomorrow/Tomorrow-Thin.woff2");
+  font-weight: 100;
+  font-style:normal;
 }
 
 
@@ -345,6 +358,18 @@ body {
   border: 1px solid #0fdbba;
   border-radius: 15px;
 
+}
+
+#timer {
+  position:absolute;
+  text-align:center;
+  width:135px;
+  height:35px;
+  left:0px;
+  top:0px;
+  line-height:35px;
+  color:#0fdbba;
+  font-size:25px;
 }
 
 /* NOUVELLES REGLES ET ATTAQUES RANDOM */
@@ -669,6 +694,44 @@ body {
   display:none;
 }
 #vie12 {
+  display:none;
+}
+
+
+#nour1 {
+  display:none;
+}
+#nour2 {
+  display:none;
+}
+#nour3 {
+  display:none;
+}
+#nour4 {
+  display:none;
+}
+#nour5 {
+  display:none;
+}
+#nour6 {
+  display:none;
+}
+#nour7 {
+  display:none;
+}
+#nour8 {
+  display:none;
+}
+#nour9 {
+  display:none;
+}
+#nour10 {
+  display:none;
+}
+#nour11 {
+  display:none;
+}
+#nour12 {
   display:none;
 }
 

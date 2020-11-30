@@ -11,13 +11,28 @@ let HedgehogNumber = document.querySelector('.HedgehogNumber');
 //   alert('Salut ' + name + ', sympa de vous voir !');
 // }
 
+
+
 var hasSeenTuto = localStorage.getItem('hasSeenTuto');
-if (hasSeenTuto != true){
-	hasSeenTuto = false;
+
+if (hasSeenTuto != 'true'){
+	hasSeenTuto = 'false';
+	localStorage.setItem('hasSeenTuto', 'false');
 }
-localStorage.setItem('haseSeenTuto', 'false');
 
 var compteurNour = 0;
+
+if (localStorage.getItem('compteurNour')) {
+	compteurNour = localStorage.getItem('compteurNour');
+}
+
+
+// localStorage.getItem('compteurNour');
+
+updateCompteurNour(compteurNour);
+
+
+
 var compteurVies = localStorage.getItem('compteurVies');
 console.log(compteurVies);
 
@@ -43,7 +58,7 @@ localStorage.setItem('infoProcShown4', 'false');
 
 
 // TUTO DEBUT
-if (hasSeenTuto == false){
+if (hasSeenTuto == 'false'){
 
 	$("#modalTuto1").toggle();
 	$("#btnReproduction").toggleClass("highlight");
@@ -261,40 +276,41 @@ if (hasSeenTuto == false){
 	});
 
 	$('#btnAccueilTuto13').click(function() {
-	$("#modalTuto14").toggle();
-	$("#btnVehicule").toggleClass("move-image7");
-	$("#btnVehicule").toggleClass("highlight");
-	$("#btnHumain").toggleClass("move-image8");
-	$("#btnHumain").toggleClass("highlight");
-	$("#modalTuto13").toggle();
+		$("#modalTuto14").toggle();
+		$("#btnVehicule").toggleClass("move-image7");
+		$("#btnVehicule").toggleClass("highlight");
+		$("#btnHumain").toggleClass("move-image8");
+		$("#btnHumain").toggleClass("highlight");
+		$("#modalTuto13").toggle();
 	});
 
 	$('#btnTuto14').click(function() {
-	$("#modalTuto15").toggle();
-	$("#modalTuto14").toggle();
-	$("#btnHumain").toggleClass("move-image8");
-	$("#btnHumain").toggleClass("highlight");
-	$("#btnHerisson").toggleClass("move-image9");
-	$("#btnHerisson").toggleClass("highlight");
+		$("#modalTuto15").toggle();
+		$("#modalTuto14").toggle();
+		$("#btnHumain").toggleClass("move-image8");
+		$("#btnHumain").toggleClass("highlight");
+		$("#btnHerisson").toggleClass("move-image9");
+		$("#btnHerisson").toggleClass("highlight");
 	});
 
 	$('#btnAccueilTuto14').click(function() {
-	$("#modalTuto15").toggle();
-	$("#btnHumain").toggleClass("move-image8");
-	$("#btnHumain").toggleClass("highlight");
-	$("#btnHerisson").toggleClass("move-image9");
-	$("#btnHerisson").toggleClass("highlight");
-	$("#modalTuto14").toggle();
+		$("#modalTuto15").toggle();
+		$("#btnHumain").toggleClass("move-image8");
+		$("#btnHumain").toggleClass("highlight");
+		$("#btnHerisson").toggleClass("move-image9");
+		$("#btnHerisson").toggleClass("highlight");
+		$("#modalTuto14").toggle();
 	});
 
 	$('#btnTuto15').click(function() {
-	$("#modalTuto15").toggle();
-	$("#btnHerisson").toggleClass("move-image9");
-	$("#btnHerisson").toggleClass("highlight");
+		$("#modalTuto15").toggle();
+		$("#btnHerisson").toggleClass("move-image9");
+		$("#btnHerisson").toggleClass("highlight");
+		localStorage.setItem('countDownDate', Date.now()+3600000);
 	});
 
 
-	hasSeenTuto=true;
+	localStorage.setItem('hasSeenTuto', 'true');
 
 }
 
@@ -350,41 +366,44 @@ function chgtRegles4(time) {
 
 // TIMER GLOBAL
 
-var timer = 0;
+// Set the date we're counting down to
+var countDownDate = 0;
 
-$('#reset-timer').click(function() {
-	timer = 3600;
-}); 
-
+// Update the count down every 1 second
 var x = setInterval(function() {
 
-	timer = timer - 1;
+	countDownDate = localStorage.getItem('countDownDate');
+
+  // Get today's date and time
+  var now = Date.now();
+
+  // Find the distance between now and the count down date
+  var distance = countDownDate - now;
 
   // Time calculations for days, hours, minutes and seconds
-  var minutes = Math.floor((timer % (60 * 60)) / 60);
-  var seconds = Math.floor((timer % 60));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-  // Display the result in the element with id="demo"
-
-  if (seconds < 10) {
-    document.getElementById("timer").innerHTML = minutes + ":0" + seconds;
-  }
-  else {
-  	document.getElementById("timer").innerHTML = minutes + ":" + seconds;
-  }
-
-  triggerAttack(3595);
-  chgtRegles1(3300);
-  chgtRegles2(2700);
-  chgtRegles3(2400);
-  chgtRegles4(2100);
 
 
   // If the count down is finished, write some text 
-  if (timer < 0) {
-    document.getElementById("timer").innerHTML = "EXPIRED";
+  if (seconds < 10) {
+  	document.getElementById("timer").innerHTML = minutes + ":0" + seconds ;
+  } else {
+  	// Display the result in the element with id="demo"
+  	document.getElementById("timer").innerHTML = minutes + ":" + seconds ;
+  }
+
+
+  // If the count down is finished, write some text 
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("timer").innerHTML = "";
   }
 }, 1000);
+
+
 
 
 
@@ -574,6 +593,22 @@ function updateCompteur(compteurVies) {
 
 
 
+// COMPTEUR NOURRITURE
+
+function updateCompteurNour(compteurNour) {
+	for (i = 0; i <= 12; i++) {
+		if (i <= compteurNour) {
+			$("#nour"+i).css('display', 'block'); 
+		}
+		else{
+			$("#nour"+i).css('display', 'none');
+		}
+	}
+	console.log("test");
+}
+
+
+
 // ZONE ARBOREE
 
 $('#btnArbore').click(function() {
@@ -672,6 +707,8 @@ $('#btnRoute2').click(function() {
 	if (chosenRoute == "modalRouteMort") {
 		compteurVies = compteurVies - 1;
 		console.log(compteurVies);
+		updateCompteur(compteurVies);
+		localStorage.setItem('compteurVies', compteurVies);
 	}
 });
 
@@ -741,6 +778,7 @@ $(window).click(function(event) {
 
 $('#btnAccueil').click(function() {
 	$("#modalNourriture").css('display', 'none');
+	
 }); 
 
 
@@ -755,6 +793,8 @@ $('#btnFinNour').click(function() {
 	$("#modalNourriture").css('display', 'none');
 	compteurNour = compteurNour + 1;
 	console.log(compteurNour);
+	localStorage.setItem('compteurNour', compteurNour);
+	updateCompteurNour(compteurNour);
 }); 
 
 
@@ -775,6 +815,7 @@ $('#btnPhotoNour2').click(function() {
 
 $('#btnAccueil2').click(function() {
 	$("#modalFinNour").css('display','none');
+
 }); 
 
 
