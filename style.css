@@ -416,7 +416,7 @@ body {
   padding: 1px;
   width: 95px;
   height: 35px;
-  top : 58vh;
+  top : 55vh;
   left: 5vw;
   border: 1px solid #0fdbba;
   border-radius: 15px;
@@ -1140,7 +1140,7 @@ body {
 
 
 
-.icone-rond {
+/*.icone-rond {
   width: 17vw;
   left: 52vw;
   top: 89vh;    
@@ -1166,7 +1166,7 @@ body {
 .icone-prev:hover,
 .icone-prev:focus {
   cursor: pointer;
-}
+}*/
 
 
 @media screen and (min-width: 900px) {
