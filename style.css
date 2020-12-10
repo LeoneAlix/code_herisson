@@ -169,14 +169,36 @@ body {
   width: 100%;
 }
 
+#skip-button {
+  position: fixed;
+  bottom: 20px;
+  z-index: 3;
+  left: 20px;
+  text-decoration: none;
+}
+
+
+.bottom-band {
+  position:fixed;
+  bottom:0;
+  left:0;
+  z-index:2;
+  height: 65px;
+  width: 100%;
+  background-color: rgba(255,255,255,0.7);
+}
 
 
 /* ENCHAINEMENT DES PAGES D INTRO */
 
 #accueil-app {
+  height:100vh;
   background-image: url(assets/fond_accueil.png);
   background-size: 130%;
-  background-position: center -6vw;
+  background-position: center -12vw;
+  background-repeat: no-repeat;
+
+
 }
 
 #modalIntro-1 {
@@ -207,6 +229,47 @@ body {
   background-image: url(assets/fond_intro5.png);
   background-size: 130%;
   background-position: center -10vw;
+}
+
+
+#form1-text-input {
+  height: 2.2rem;
+  border-radius: 1.1rem;
+  border: 2px solid #ddd;
+  line-height: 2.2rem;
+  text-align: center;
+  color: #1f2fe9;
+  font-size: 1.2rem;
+  font-family: "Tomorrow";
+  width: 110px;
+}
+
+#boutonForm {
+  height: 44px;
+  width: 44px;
+  background: blue;
+  color: white;
+  margin-top: 1.4rem;
+  border-radius: 22px;
+  border: 0;
+  text-transform: uppercase;
+  font-family: "Tomorrow";
+  font-weight: 500;
+}
+
+.boutonClearStorage {
+  height: 100px;
+  width: 100px;
+  margin-left: 5vw;
+  background: #00e0b9;
+  color: white;
+  margin-top: 1.4rem;
+  border-radius: 50px;
+  border: 0;
+  text-transform: uppercase;
+  font-family: "Tomorrow";
+  font-weight: 500;
+  text-align: center;
 }
 
 
@@ -454,6 +517,23 @@ body {
   max-width: 100%;
 }
 
+.popup2 {
+/*  position:absolute;*/
+  width:80vw;
+  text-align: center;
+  color: white;;
+  background-color: #1238E0;
+  border-radius: 20px;
+  border:0;
+/*  margin: 15% auto;*/
+/*  margin-top:-5vw;*/
+  padding:10px;
+  font-size: 18px;
+  text-align:center;
+  z-index:3;
+  max-width: 100%;
+}
+
 #popup-reprod-4 {
   position: relative;
   margin-top: -50vw;
@@ -483,8 +563,8 @@ body {
   background-color: rgba(255, 255, 255, 0.7);
   border-radius: 20px;
   border:0.5vw solid #0fdbba;
-  margin-left:8vw;
-  margin-right:8vw;
+  margin-left:4vw;
+  margin-right:4vw;
   margin-top:10vw;
   padding:3vw;
   font-size: 22px;
@@ -494,11 +574,27 @@ body {
 }
 
 #texte-intro2 {
-  margin-top: 0vw;
+  top: 97vw;
 }
 
 #texte-intro3 {
   margin-top: 20vw;
+}
+
+#texte-intro4 {
+  position:absolute;
+  color: #1238E0;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 20px;
+  border:0.5vw solid #0fdbba;
+  margin-left:4vw;
+  margin-right:4vw;
+  margin-top: 7vw;
+  padding:3vw;
+  font-size: 7vw;
+  text-align:center;
+  line-height:0.9em;
+  z-index: 2;
 }
 
 
@@ -530,7 +626,7 @@ body {
 }
 
 #page-accueil{
-  margin: 0 auto;
+  margin: 10px auto 0;
   height: 90vh;
   width: 87vw;
   position: relative;
@@ -555,6 +651,18 @@ body {
   margin-right: auto;
   margin-top: 0vh;
   margin-bottom: 2vh;
+  z-index: 2;
+}
+
+.illu-classique1 {
+  width: 80vw;
+  position: absolute;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  top: 14vh;
+  left: 6vw;
+  margin-bottom: 0;
   z-index: 2;
 }
 
@@ -970,9 +1078,9 @@ body {
 
 .btnPrev {
     width: 17vw;
-    position:absolute;
+    position:fixed;
     left: 28vw;
-    top: 170vw;
+    bottom: 5px;
     z-index:3;
 }
 
