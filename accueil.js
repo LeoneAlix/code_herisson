@@ -79,200 +79,206 @@ if (hasSeenTuto == 'false'){
 	// });
 
 	$('#btnTuto1').click(function() {
-	$("#modalTuto1").toggle();
-	$("#modalTuto2").toggle();
+		$("#modalTuto1").toggle();
+		$("#modalTuto2").toggle();
 	}); 
 
+	$('#skip-button').click(function() {
+		$("#modalTuto1").toggle();
+		localStorage.setItem('countDownDate', Date.now()+3600000);
+	});
+
+
 	$('#btnAccueilTuto').click(function() {
-	$("#modalTuto1").toggle();
-	$("#modalTuto2").toggle();
+		$("#modalTuto1").toggle();
+		$("#modalTuto2").toggle();
 	}); 
 
 	$('#btnTuto2').click(function() {
-	$("#modalTuto2").toggle();
-	$("#btnReproduction").toggleClass("highlight");
-	$("#btnReproduction").toggleClass("move-image");
-	$("#modalTuto3").toggle();
+		$("#modalTuto2").toggle();
+		$("#btnReproduction").toggleClass("highlight");
+		$("#btnReproduction").toggleClass("move-image");
+		$("#modalTuto3").toggle();
 	});
 
 	$('#btnAccueilTuto2').click(function() {
-	$("#modalTuto2").toggle();
-	$("#modalTuto3").toggle();
-	$("#btnReproduction").toggleClass("highlight");
-	$("#btnReproduction").toggleClass("move-image");
+		$("#modalTuto2").toggle();
+		$("#modalTuto3").toggle();
+		$("#btnReproduction").toggleClass("highlight");
+		$("#btnReproduction").toggleClass("move-image");
 	}); 
 
 	$('#btnTuto3').click(function() {
-	$("#modalTuto3").toggle();
-	$("#btnNourriture").toggleClass("highlight");
-	$("#btnNourriture").toggleClass("move-image2");
-	$("#modalTuto4").toggle();
+		$("#modalTuto3").toggle();
+		$("#btnNourriture").toggleClass("highlight");
+		$("#btnNourriture").toggleClass("move-image2");
+		$("#modalTuto4").toggle();
 	});
 
 	$('#btnAccueilTuto3').click(function() {
-	$("#modalTuto3").toggle();
-	$("#modalTuto4").toggle();
-	$("#btnNourriture").toggleClass("highlight");
-	$("#btnNourriture").toggleClass("move-image2");
+		$("#modalTuto3").toggle();
+		$("#modalTuto4").toggle();
+		$("#btnNourriture").toggleClass("highlight");
+		$("#btnNourriture").toggleClass("move-image2");
 	}); 
 
 	$('#btnTuto4').click(function() {
-	$("#modalTuto4").toggle();
-	$("#modalTuto5").toggle();
+		$("#modalTuto4").toggle();
+		$("#modalTuto5").toggle();
 	});
 
 	$('#btnAccueilTuto4').click(function() {
-	$("#modalTuto4").toggle();
-	$("#modalTuto5").toggle();
+		$("#modalTuto4").toggle();
+		$("#modalTuto5").toggle();
 	});
 
 	$('#btnTuto5').click(function() {
-	$("#modalTuto5").toggle();
-	$("#btnNourriture").toggleClass("highlight");
-	$("#btnNourriture").toggleClass("move-image2");
-	$("#modalTuto6").toggle();
+		$("#modalTuto5").toggle();
+		$("#btnNourriture").toggleClass("highlight");
+		$("#btnNourriture").toggleClass("move-image2");
+		$("#modalTuto6").toggle();
 	});
 
 	$('#btnAccueilTuto5').click(function() {
-	$("#modalTuto5").toggle();
-	$("#modalTuto6").toggle();
-	$("#btnNourriture").toggleClass("highlight");
-	$("#btnNourriture").toggleClass("move-image2");
+		$("#modalTuto5").toggle();
+		$("#modalTuto6").toggle();
+		$("#btnNourriture").toggleClass("highlight");
+		$("#btnNourriture").toggleClass("move-image2");
 	}); 
 
 	$('#btnTuto6').click(function() {
-	$("#modalTuto7").toggle();
-	$("#btnArbore").toggleClass("highlight");
-	$("#btnHerbace").toggleClass("highlight");
-	$("#btnArtif").toggleClass("highlight");
-	$("#btnRoute").toggleClass("highlight");
-	$("#modalTuto6").toggle();
+		$("#modalTuto7").toggle();
+		$("#btnArbore").toggleClass("highlight");
+		$("#btnHerbace").toggleClass("highlight");
+		$("#btnArtif").toggleClass("highlight");
+		$("#btnRoute").toggleClass("highlight");
+		$("#modalTuto6").toggle();
 	});
 
 	$('#btnAccueilTuto6').click(function() {
-	$("#modalTuto6").toggle();
-	$("#modalTuto7").toggle();
-	$("#btnArbore").toggleClass("highlight");
-	$("#btnHerbace").toggleClass("highlight");
-	$("#btnArtif").toggleClass("highlight");
-	$("#btnRoute").toggleClass("highlight");
+		$("#modalTuto6").toggle();
+		$("#modalTuto7").toggle();
+		$("#btnArbore").toggleClass("highlight");
+		$("#btnHerbace").toggleClass("highlight");
+		$("#btnArtif").toggleClass("highlight");
+		$("#btnRoute").toggleClass("highlight");
 	}); 
 
 	$('#btnTuto7').click(function() {
-	$("#modalTuto8").toggle();
-	$("#btnArbore").toggleClass("move-image3");
-	$("#btnHerbace").toggleClass("highlight");
-	$("#btnArtif").toggleClass("highlight");
-	$("#btnRoute").toggleClass("highlight");
-	$("#modalTuto7").toggle();
+		$("#modalTuto8").toggle();
+		$("#btnArbore").toggleClass("move-image3");
+		$("#btnHerbace").toggleClass("highlight");
+		$("#btnArtif").toggleClass("highlight");
+		$("#btnRoute").toggleClass("highlight");
+		$("#modalTuto7").toggle();
 	});
 
 	$('#btnAccueilTuto7').click(function() {
-	$("#modalTuto8").toggle();
-	$("#modalTuto7").toggle();
-	$("#btnArbore").toggleClass("move-image3");
-	$("#btnHerbace").toggleClass("highlight");
-	$("#btnArtif").toggleClass("highlight");
-	$("#btnRoute").toggleClass("highlight");
+		$("#modalTuto8").toggle();
+		$("#modalTuto7").toggle();
+		$("#btnArbore").toggleClass("move-image3");
+		$("#btnHerbace").toggleClass("highlight");
+		$("#btnArtif").toggleClass("highlight");
+		$("#btnRoute").toggleClass("highlight");
 	});
 
 	$('#btnTuto8').click(function() {
-	$("#modalTuto9").toggle();
-	$("#btnArbore").toggleClass("move-image3");
-	$("#btnArbore").toggleClass("highlight");
-	$("#btnHerbace").toggleClass("move-image4");
-	$("#btnHerbace").toggleClass("highlight");
-	$("#modalTuto8").toggle();
+		$("#modalTuto9").toggle();
+		$("#btnArbore").toggleClass("move-image3");
+		$("#btnArbore").toggleClass("highlight");
+		$("#btnHerbace").toggleClass("move-image4");
+		$("#btnHerbace").toggleClass("highlight");
+		$("#modalTuto8").toggle();
 	});
 
 	$('#btnAccueilTuto8').click(function() {
-	$("#modalTuto9").toggle();
-	$("#modalTuto8").toggle();
-	$("#btnArbore").toggleClass("move-image3");
-	$("#btnArbore").toggleClass("highlight");
-	$("#btnHerbace").toggleClass("move-image4");
-	$("#btnHerbace").toggleClass("highlight");
+		$("#modalTuto9").toggle();
+		$("#modalTuto8").toggle();
+		$("#btnArbore").toggleClass("move-image3");
+		$("#btnArbore").toggleClass("highlight");
+		$("#btnHerbace").toggleClass("move-image4");
+		$("#btnHerbace").toggleClass("highlight");
 	});
 
 	$('#btnTuto9').click(function() {
-	$("#modalTuto10").toggle();
-	$("#btnHerbace").toggleClass("move-image4");
-	$("#btnHerbace").toggleClass("highlight");
-	$("#btnArtif").toggleClass("move-image5");
-	$("#btnArtif").toggleClass("highlight");
-	$("#modalTuto9").toggle();
+		$("#modalTuto10").toggle();
+		$("#btnHerbace").toggleClass("move-image4");
+		$("#btnHerbace").toggleClass("highlight");
+		$("#btnArtif").toggleClass("move-image5");
+		$("#btnArtif").toggleClass("highlight");
+		$("#modalTuto9").toggle();
 	});
 
 	$('#btnAccueilTuto9').click(function() {
-	$("#modalTuto10").toggle();
-	$("#btnHerbace").toggleClass("move-image4");
-	$("#btnHerbace").toggleClass("highlight");
-	$("#btnArtif").toggleClass("move-image5");
-	$("#btnArtif").toggleClass("highlight");
-	$("#modalTuto9").toggle();
+		$("#modalTuto10").toggle();
+		$("#btnHerbace").toggleClass("move-image4");
+		$("#btnHerbace").toggleClass("highlight");
+		$("#btnArtif").toggleClass("move-image5");
+		$("#btnArtif").toggleClass("highlight");
+		$("#modalTuto9").toggle();
 	});
 
 	$('#btnTuto10').click(function() {
-	$("#modalTuto11").toggle();
-	$("#btnArtif").toggleClass("move-image5");
-	$("#btnArtif").toggleClass("highlight");
-	$("#btnRoute").toggleClass("move-image6");
-	$("#btnRoute").toggleClass("highlight");
-	$("#modalTuto10").toggle();
+		$("#modalTuto11").toggle();
+		$("#btnArtif").toggleClass("move-image5");
+		$("#btnArtif").toggleClass("highlight");
+		$("#btnRoute").toggleClass("move-image6");
+		$("#btnRoute").toggleClass("highlight");
+		$("#modalTuto10").toggle();
 	});
 
 	$('#btnAccueilTuto10').click(function() {
-	$("#modalTuto11").toggle();
-	$("#btnArtif").toggleClass("move-image5");
-	$("#btnArtif").toggleClass("highlight");
-	$("#btnRoute").toggleClass("move-image6");
-	$("#btnRoute").toggleClass("highlight");
-	$("#modalTuto10").toggle();
+		$("#modalTuto11").toggle();
+		$("#btnArtif").toggleClass("move-image5");
+		$("#btnArtif").toggleClass("highlight");
+		$("#btnRoute").toggleClass("move-image6");
+		$("#btnRoute").toggleClass("highlight");
+		$("#modalTuto10").toggle();
 	});
 
 	$('#btnTuto11').click(function() {
-	$("#modalTuto11").toggle();
-	$("#modalTuto12").toggle();
-	$("#btnRoute").toggleClass("move-image6");
-	$("#btnRoute").toggleClass("highlight");
-	$("#btnVehicule").toggleClass("highlight");
-	$("#btnHumain").toggleClass("highlight");
-	$("#btnHerisson").toggleClass("highlight");
+		$("#modalTuto11").toggle();
+		$("#modalTuto12").toggle();
+		$("#btnRoute").toggleClass("move-image6");
+		$("#btnRoute").toggleClass("highlight");
+		$("#btnVehicule").toggleClass("highlight");
+		$("#btnHumain").toggleClass("highlight");
+		$("#btnHerisson").toggleClass("highlight");
 	});
 
 	$('#btnAccueilTuto11').click(function() {
-	$("#modalTuto11").toggle();
-	$("#modalTuto12").toggle();
-	$("#btnRoute").toggleClass("move-image6");
-	$("#btnRoute").toggleClass("highlight");
-	$("#btnVehicule").toggleClass("highlight");
-	$("#btnHumain").toggleClass("highlight");
-	$("#btnHerisson").toggleClass("highlight");
+		$("#modalTuto11").toggle();
+		$("#modalTuto12").toggle();
+		$("#btnRoute").toggleClass("move-image6");
+		$("#btnRoute").toggleClass("highlight");
+		$("#btnVehicule").toggleClass("highlight");
+		$("#btnHumain").toggleClass("highlight");
+		$("#btnHerisson").toggleClass("highlight");
 	}); 
 
 	$('#btnTuto12').click(function() {
-	$("#modalTuto12").toggle();
-	$("#modalTuto13").toggle();
-	$("#btnVehicule").toggleClass("move-image7");
-	$("#btnHumain").toggleClass("highlight");
-	$("#btnHerisson").toggleClass("highlight");
+		$("#modalTuto12").toggle();
+		$("#modalTuto13").toggle();
+		$("#btnVehicule").toggleClass("move-image7");
+		$("#btnHumain").toggleClass("highlight");
+		$("#btnHerisson").toggleClass("highlight");
 	});
 
 	$('#btnAccueilTuto12').click(function() {
-	$("#modalTuto13").toggle();
-	$("#btnVehicule").toggleClass("move-image7");
-	$("#btnHumain").toggleClass("highlight");
-	$("#btnHerisson").toggleClass("highlight");
-	$("#modalTuto12").toggle();
+		$("#modalTuto13").toggle();
+		$("#btnVehicule").toggleClass("move-image7");
+		$("#btnHumain").toggleClass("highlight");
+		$("#btnHerisson").toggleClass("highlight");
+		$("#modalTuto12").toggle();
 	});
 
 	$('#btnTuto13').click(function() {
-	$("#modalTuto13").toggle();
-	$("#modalTuto14").toggle();
-	$("#btnVehicule").toggleClass("move-image7");
-	$("#btnVehicule").toggleClass("highlight");
-	$("#btnHumain").toggleClass("move-image8");
-	$("#btnHumain").toggleClass("highlight");
+		$("#modalTuto13").toggle();
+		$("#modalTuto14").toggle();
+		$("#btnVehicule").toggleClass("move-image7");
+		$("#btnVehicule").toggleClass("highlight");
+		$("#btnHumain").toggleClass("move-image8");
+		$("#btnHumain").toggleClass("highlight");
 	});
 
 	$('#btnAccueilTuto13').click(function() {
@@ -322,10 +328,10 @@ function getRandomInt(max) {
 
 function triggerAttack(time) {
 
-	console.log(timer);
+	console.log(distance);
 	console.log(localStorage.getItem('attackShown1'));
 
-	if (timer > 0 && timer < time && localStorage.getItem('attackShown1') == 'false') {
+	if (distance > 0 && distance < time && localStorage.getItem('attackShown1') == 'false') {
 		var num = getRandomInt(attaqueRandom.length);
 		var chosenAttaque = attaqueRandom[num];
 		$("#" + chosenAttaque).css('display', 'block');
@@ -401,6 +407,9 @@ var x = setInterval(function() {
     clearInterval(x);
     document.getElementById("timer").innerHTML = "";
   }
+
+  triggerAttack(3599990);
+  
 }, 1000);
 
 
@@ -1157,9 +1166,7 @@ $('#btnHerisson6').click(function() {
 // INFORMATIONS PROCEDURALES
 
 
-$("#infoProc1 .close").click(function() {
-	$("#infoProc1").css('display', 'none');
-});
+
 $(window).click(function(event) {
 	if (event.target.id == "infoProc1" ) {
 		$("#infoProc1").css('display', 'none');
@@ -1169,9 +1176,7 @@ $('#btninfoProc1').click(function() {
 	$("#infoProc1").css('display', 'none');
 });
 
-$("#infoProc2 .close").click(function() {
-	$("#infoProc2").css('display', 'none');
-});
+
 $(window).click(function(event) {
 	if (event.target.id == "infoProc2" ) {
 		$("#infoProc2").css('display', 'none');
@@ -1181,9 +1186,7 @@ $('#btninfoProc2').click(function() {
 	$("#infoProc2").css('display', 'none');
 });
 
-$("#infoProc3 .close").click(function() {
-	$("#infoProc3").css('display', 'none');
-});
+
 $(window).click(function(event) {
 	if (event.target.id == "infoProc3" ) {
 		$("#infoProc3").css('display', 'none');
@@ -1193,9 +1196,7 @@ $('#btninfoProc3').click(function() {
 	$("#infoProc3").css('display', 'none');
 });
 
-$("#infoProc4 .close").click(function() {
-	$("#infoProc4").css('display', 'none');
-});
+
 $(window).click(function(event) {
 	if (event.target.id == "infoProc4" ) {
 		$("#infoProc4").css('display', 'none');
@@ -1210,9 +1211,7 @@ $('#btninfoProc4').click(function() {
 // ATTAQUE RANDOM
 
 
-$("#attaqueRandom1 .close").click(function() {
-	$("#attaqueRandom1").css('display', 'none');
-});
+
 $(window).click(function(event) {
 	if (event.target.id == "attaqueRandom1" ) {
 		$("#attaqueRandom1").css('display', 'none');
@@ -1223,9 +1222,7 @@ $('#btnattaqueRandom1').click(function() {
 });
 
 
-$("#attaqueRandom2 .close").click(function() {
-	$("#attaqueRandom2").css('display', 'none');
-});
+
 $(window).click(function(event) {
 	if (event.target.id == "attaqueRandom2" ) {
 		$("#attaqueRandom2").css('display', 'none');
@@ -1235,9 +1232,7 @@ $('#btnattaqueRandom2').click(function() {
 	$("#attaqueRandom2").css('display', 'none');
 });
 
-$("#attaqueRandom3 .close").click(function() {
-	$("#attaqueRandom3").css('display', 'none');
-});
+
 $(window).click(function(event) {
 	if (event.target.id == "attaqueRandom3" ) {
 		$("#attaqueRandom3").css('display', 'none');
