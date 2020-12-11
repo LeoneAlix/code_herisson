@@ -55,6 +55,7 @@ localStorage.setItem('infoProcShown1', 'false');
 localStorage.setItem('infoProcShown2', 'false');
 localStorage.setItem('infoProcShown3', 'false');
 localStorage.setItem('infoProcShown4', 'false');
+localStorage.setItem('infoProcShown5', 'false');
 
 
 // TUTO DEBUT
@@ -358,14 +359,21 @@ function chgtRegles2(time) {
 function chgtRegles3(time) {
 	if (timer > 0 && timer < time && localStorage.getItem('infoProcShown3') == 'false') {
 		$("#infoProc3").css('display', 'block');
-		localStorage.setItem('infoProcShown2', true);
+		localStorage.setItem('infoProcShown3', true);
 	}
 }
 
 function chgtRegles4(time) {
 	if (timer > 0 && timer < time && localStorage.getItem('infoProcShown4') == 'false') {
 		$("#infoProc4").css('display', 'block');
-		localStorage.setItem('infoProcShown2', true);
+		localStorage.setItem('infoProcShown4', true);
+	}
+}
+
+function chgtRegles5(time) {
+	if (timer > 0 && timer < time && localStorage.getItem('infoProcShown5') == 'false') {
+		$("#infoProc5").css('display', 'block');
+		localStorage.setItem('infoProcShown5', true);
 	}
 }
 
@@ -408,8 +416,15 @@ var x = setInterval(function() {
     document.getElementById("timer").innerHTML = "";
   }
 
+  triggerAttack(3599400);
   triggerAttack(3599990);
-  
+  triggerAttack(3599990);
+  function chgtRegles1(time);
+  function chgtRegles2(time);
+  function chgtRegles3(time);
+  function chgtRegles4(time);
+  function chgtRegles5(time);
+
 }, 1000);
 
 
