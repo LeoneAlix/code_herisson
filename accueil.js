@@ -419,11 +419,11 @@ var x = setInterval(function() {
   triggerAttack(3599400);
   triggerAttack(3599990);
   triggerAttack(3599990);
-  function chgtRegles1(time);
-  function chgtRegles2(time);
-  function chgtRegles3(time);
-  function chgtRegles4(time);
-  function chgtRegles5(time);
+  chgtRegles1(time);
+  chgtRegles2(time);
+  chgtRegles3(time);
+  chgtRegles4(time);
+  chgtRegles5(time);
 
 }, 1000);
 
