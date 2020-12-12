@@ -416,7 +416,7 @@ body {
   padding: 1px;
   width: 95px;
   height: 35px;
-  top : 56vh;
+  bottom : -59vh;
   left: 5vw;
   border: 1px solid #0fdbba;
   border-radius: 15px;
@@ -476,7 +476,6 @@ body {
 #attaqueRandom3{
   display:none;
 }
-
 
 
 /* The Close Button */

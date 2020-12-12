@@ -327,16 +327,16 @@ function getRandomInt(max) {
   return Math.floor(Math.random() * Math.floor(max));
 }
 
-function triggerAttack(time) {
+function triggerAttack(time,attackNbr) {
 
 	console.log(distance);
 	console.log(localStorage.getItem('attackShown1'));
 
-	if (distance > 0 && distance < time && localStorage.getItem('attackShown1') == 'false') {
+	if (distance > 0 && distance < time && localStorage.getItem('attackShown'+attackNbr) == 'false') {
 		var num = getRandomInt(attaqueRandom.length);
 		var chosenAttaque = attaqueRandom[num];
 		$("#" + chosenAttaque).css('display', 'block');
-		localStorage.setItem('attackShown1', true);
+		localStorage.setItem('attackShown'+attackNbr, true);
 	}
 }
 
@@ -382,6 +382,7 @@ function chgtRegles5(time) {
 
 // Set the date we're counting down to
 var countDownDate = 0;
+var distance = 3600000;
 
 // Update the count down every 1 second
 var x = setInterval(function() {
@@ -392,7 +393,7 @@ var x = setInterval(function() {
   var now = Date.now();
 
   // Find the distance between now and the count down date
-  var distance = countDownDate - now;
+  distance = countDownDate - now;
 
   // Time calculations for days, hours, minutes and seconds
   var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
@@ -416,9 +417,11 @@ var x = setInterval(function() {
     document.getElementById("timer").innerHTML = "";
   }
 
-  triggerAttack(3599400);
-  triggerAttack(3599990);
-  triggerAttack(3599990);
+  console.log(distance);
+
+  triggerAttack(3599990,1);
+  triggerAttack(3500000,2);
+  triggerAttack(3400000,3);
   chgtRegles1(time);
   chgtRegles2(time);
   chgtRegles3(time);
