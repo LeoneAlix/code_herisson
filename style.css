@@ -133,6 +133,8 @@ body {
   box-shadow: 1px 1px 19px 3px rgba(0,0,0,0.2);
 }
 
+
+
 #modal-clair-1 {
   background: rgba(15,219,186,0.9);
 }
@@ -183,7 +185,7 @@ body {
   bottom:0;
   left:0;
   z-index:2;
-  height: 65px;
+  height: 11vh;
   width: 100%;
   background-color: rgba(255,255,255,0.7);
 }
@@ -270,6 +272,11 @@ body {
   font-family: "Tomorrow";
   font-weight: 500;
   text-align: center;
+}
+
+.boutonClearStorage:hover,
+.boutonClearStorage:focus {
+  cursor: pointer;
 }
 
 
@@ -416,7 +423,7 @@ body {
   padding: 1px;
   width: 95px;
   height: 35px;
-  bottom : -59vh;
+  top : 56vh;
   left: 5vw;
   border: 1px solid #0fdbba;
   border-radius: 15px;
@@ -649,8 +656,8 @@ body {
   margin-left: auto;
   margin-right: auto;
   margin-top: 0vh;
-  margin-bottom: 2vh;
-  z-index: 2;
+  margin-bottom: -1vh;
+  z-index: 1;
 }
 
 .illu-classique1 {
@@ -1061,7 +1068,7 @@ body {
 /*BOUTONS RONDS*/
 
 .btnNext {
-  width: 17vw;
+  width: 16vw;
   position: fixed;
   align-content: center;
   left: 54vw;
@@ -1076,8 +1083,9 @@ body {
 
 
 .btnPrev {
-    width: 17vw;
+    width: 16vw;
     position:fixed;
+    align-content: center;
     left: 28vw;
     bottom: 5px;
     z-index:3;
@@ -1218,6 +1226,7 @@ body {
 /*    margin: 15% auto;*/
     padding:10px;
     font-size: 16px;
+    z-index: 3;
   }
 
 
@@ -1239,6 +1248,7 @@ body {
   margin-right: auto;
   margin-top: 20px;
   margin-bottom: 20px;
+  z-index: 0;
   }
 
 

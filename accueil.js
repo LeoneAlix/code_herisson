@@ -370,12 +370,7 @@ function chgtRegles4(time) {
 	}
 }
 
-function chgtRegles5(time) {
-	if (timer > 0 && timer < time && localStorage.getItem('infoProcShown5') == 'false') {
-		$("#infoProc5").css('display', 'block');
-		localStorage.setItem('infoProcShown5', true);
-	}
-}
+
 
 
 // TIMER GLOBAL
@@ -419,14 +414,13 @@ var x = setInterval(function() {
 
   console.log(distance);
 
-  triggerAttack(3599990,1);
+  triggerAttack(3000000,1);
   triggerAttack(3500000,2);
   triggerAttack(3400000,3);
-  chgtRegles1(time);
-  chgtRegles2(time);
-  chgtRegles3(time);
-  chgtRegles4(time);
-  chgtRegles5(time);
+  chgtRegles1(3599700);
+  chgtRegles2(3599100);
+  chgtRegles3(3598500);
+
 
 }, 1000);
 
@@ -923,6 +917,13 @@ $('#btnAccueilReprod3').click(function() {
 $('#btnReprod4').click(function() {
 	$("#modalReproduction4").css('display','block');
 	$("#modalReproduction3").css('display', 'none');
+	setTimeout(function(){ 
+		$("#infoProc5").css('display', 'block'); 
+	}, 5000);
+}); 
+
+$('#btninfoProc5').click(function() {
+	$("#infoProc5").css('display', 'none'); 
 }); 
 
 
