@@ -275,12 +275,27 @@ body {
   font-weight: 500;
 }
 
-.fileImage {
-  background: blue;
+.fileImage1 {
   color: white;
   font-size: 0.8rem;
 /*  margin-top: 0.8rem;*/
   border-radius: 20px;
+  border: 0;
+  text-transform: uppercase;
+  text-align: center;
+  font-family: "Tomorrow";
+  font-weight: 500;
+}
+
+.fileImage {
+  background: blue;
+  color: white;
+  font-size: 1rem;
+/*  margin-top: 0.8rem;*/
+  border-radius: 20px;
+  left:35vw;
+  bottom:21vh;
+  position:fixed;
   border: 0;
   text-transform: uppercase;
   text-align: center;
@@ -743,6 +758,14 @@ body {
   margin-bottom: 0;
   z-index: 2;
 }
+
+  #illu-photo {
+  width: 80px;
+  display:block;
+  z-index: 1;
+  position:fixed;
+  left:10vw;
+  }
 
 
 #illu-reproduction-3 {
@@ -1367,6 +1390,7 @@ body {
   margin-bottom: 20px;
   z-index: 0;
   }
+
 
 
 

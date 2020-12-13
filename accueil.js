@@ -28,12 +28,12 @@ var compteurNour = 0;
 if (localStorage.getItem('compteurNour')) {
 	compteurNour = localStorage.getItem('compteurNour');
 }
-
+console.log(compteurNour);
 
 // localStorage.getItem('compteurNour');
 
 updateCompteurNour(compteurNour);
-
+console.log(compteurNour);
 
 
 var compteurVies = localStorage.getItem('compteurVies');
@@ -343,28 +343,28 @@ function triggerAttack(time,attackNbr) {
 // FONCTION CHANGEMENT REGLES
 
 function chgtRegles1(time) {
-	if (timer > 0 && timer < time && localStorage.getItem('infoProcShown1') == 'false') {
+	if (distance > 0 && distance < time && localStorage.getItem('infoProcShown1') == 'false') {
 		$("#infoProc1").css('display', 'block');
 		localStorage.setItem('infoProcShown1', true);
 	}
 }
 
 function chgtRegles2(time) {
-	if (timer > 0 && timer < time && localStorage.getItem('infoProcShown2') == 'false') {
+	if (distance > 0 && distance < time && localStorage.getItem('infoProcShown2') == 'false') {
 		$("#infoProc2").css('display', 'block');
 		localStorage.setItem('infoProcShown2', true);
 	}
 }
 
 function chgtRegles3(time) {
-	if (timer > 0 && timer < time && localStorage.getItem('infoProcShown3') == 'false') {
+	if (distance > 0 && distance < time && localStorage.getItem('infoProcShown3') == 'false') {
 		$("#infoProc3").css('display', 'block');
 		localStorage.setItem('infoProcShown3', true);
 	}
 }
 
 function chgtRegles4(time) {
-	if (timer > 0 && timer < time && localStorage.getItem('infoProcShown4') == 'false') {
+	if (distance > 0 && distance < time && localStorage.getItem('infoProcShown4') == 'false') {
 		$("#infoProc4").css('display', 'block');
 		localStorage.setItem('infoProcShown4', true);
 	}
@@ -413,12 +413,12 @@ var x = setInterval(function() {
   }
 
 
-  triggerAttack(3000000,1);
-  triggerAttack(2400000,2);
-  triggerAttack(600000,3);
-  chgtRegles1(3300000);
-  chgtRegles2(2700000);
-  chgtRegles3(2100000);
+  triggerAttack(3000000,1); //10 min
+  triggerAttack(2400000,2); //20min
+  triggerAttack(600000,3);  //50min
+  chgtRegles1(3300000); //5min
+  chgtRegles2(2700000); //15 min
+  chgtRegles3(2100000); //25min
 
 }, 1000);
 
@@ -859,9 +859,12 @@ $('#btnAccueil').click(function() {
 $('#btnFinNour').click(function() {
 	$('#modalFinNour').css('display','block');
 	$("#modalNourriture").css('display', 'none');
-	compteurNour = compteurNour + 1;
+
+	compteurNour = parseInt(compteurNour) + 1;
+	console.log(compteurNour);
 	localStorage.setItem('compteurNour', compteurNour);
 	updateCompteurNour(compteurNour);
+	console.log(compteurNour);
 }); 
 
 
@@ -1019,7 +1022,7 @@ $('#btnReprod6').click(function() {
 	var num3 = getRandomInt(nombrePetits.length);
 	var nombreNes = nombrePetits[num3];
 	$('#fin_texte2').html(nombreNes + ' petits hérissons !');
-	compteurVies = Number(compteurVies) + Number(nombreNes);
+	compteurVies = parseInt(compteurVies) + parseInt(nombreNes);
 	localStorage.setItem('compteurVies', compteurVies);
 	updateCompteur(compteurVies);
 }); 
@@ -1254,7 +1257,7 @@ $('#btnHerisson6').click(function() {
 	var num3 = getRandomInt(nombrePetits.length);
 	var nombreNes = nombrePetits[num3];
 	$('#fin_texte3').html(nombreNes + ' petits hérissons !');
-	compteurVies = Number(compteurVies) + Number(nombreNes);
+	compteurVies = parseInt(compteurVies) + parseInt(nombreNes);
 	localStorage.setItem('compteurVies', compteurVies);
 	updateCompteur(compteurVies);
 }); 
