@@ -4,6 +4,9 @@ let babyHedgehogNumber = Math.floor(Math.random() * 5) + 1;
 let HedgehogNumber = document.querySelector('.HedgehogNumber');
 
 
+let nbrParticipants = localStorage.getItem('nbrParticipants');
+
+
 // const button = document.querySelector('button');
 
 // button.onclick = function() {
@@ -34,7 +37,6 @@ updateCompteurNour(compteurNour);
 
 
 var compteurVies = localStorage.getItem('compteurVies');
-console.log(compteurVies);
 
 updateCompteur(compteurVies);
 
@@ -329,13 +331,11 @@ function getRandomInt(max) {
 
 function triggerAttack(time,attackNbr) {
 
-	console.log(distance);
-	console.log(localStorage.getItem('attackShown1'));
 
 	if (distance > 0 && distance < time && localStorage.getItem('attackShown'+attackNbr) == 'false') {
-		var num = getRandomInt(attaqueRandom.length);
-		var chosenAttaque = attaqueRandom[num];
-		$("#" + chosenAttaque).css('display', 'block');
+		// var num = getRandomInt(attaqueRandom.length);
+		// var chosenAttaque = attaqueRandom[num];
+		$("#" + attaqueRandom + attackNbr).css('display', 'block');
 		localStorage.setItem('attackShown'+attackNbr, true);
 	}
 }
@@ -412,15 +412,13 @@ var x = setInterval(function() {
     document.getElementById("timer").innerHTML = "";
   }
 
-  console.log(distance);
 
   triggerAttack(3000000,1);
-  triggerAttack(3500000,2);
-  triggerAttack(3400000,3);
-  chgtRegles1(3599700);
-  chgtRegles2(3599100);
-  chgtRegles3(3598500);
-
+  triggerAttack(2400000,2);
+  triggerAttack(600000,3);
+  chgtRegles1(3300000);
+  chgtRegles2(2700000);
+  chgtRegles3(2100000);
 
 }, 1000);
 
@@ -430,11 +428,11 @@ var x = setInterval(function() {
 
 // TIMER PARADE NUPTIALE
 
-var timer2;
+var timer2 = 0;
 
 $('#btnReprod3').click(function() {
 	timer2 = 6000;
-}); 
+	$("#btnReprod4").css('display', 'none'); 
 
 var x2 = setInterval(function() {
 
@@ -457,20 +455,22 @@ var x2 = setInterval(function() {
   if (timer2 < 0) {
     document.getElementById("timer2").innerHTML = "C'est fini !";
     $("#btnReprod4").css('display', 'block');
+  	clearInterval(x2);
   }
 }, 1000);
-
+});
 
 
 // TIMER Gestation + nid
 
-var timer3;
+var timer3 = 0;
 
 $('#btnReprod5').click(function() {
 	timer3 = 6000;
-}); 
+	$("#btnReprod6").css('display', 'none');
+	$("#texte-nid").css('display', 'block');
 
-var x2 = setInterval(function() {
+var x3 = setInterval(function() {
 
 	timer3 = timer3 - 1000;
 
@@ -490,21 +490,23 @@ var x2 = setInterval(function() {
   // If the count down is finished, write some text 
   if (timer3 < 0) {
     document.getElementById("timer3").innerHTML = "Votre portée est née !";
-    $("#btexte-nid").css('display', 'none');
+    $("#texte-nid").css('display', 'none');
     $("#btnReprod6").css('display', 'block');
+ 	clearInterval(x3);
   }
 }, 1000);
+}); 
 
 
 // TIMER PARADE NUPTIALE POUR HERISSON
 
-var timer4;
+var timer4 = 0;
 
 $('#btnHerisson3').click(function() {
-	timer4 = 60000;
-}); 
+	timer4 = 6000;
+	$("#btnHerisson4").css('display', 'none');
 
-var x2 = setInterval(function() {
+var x4 = setInterval(function() {
 
 	timer4 = timer4 - 1000;
 
@@ -525,9 +527,11 @@ var x2 = setInterval(function() {
   if (timer4 < 0) {
     document.getElementById("timer4").innerHTML = "C'est fini !";
     $("#btnHerisson4").css('display', 'block');
+    clearInterval(x4);
   }
 }, 1000);
 
+}); 
 
 
 // TIMER Gestation + nid POUR HERISSON
@@ -535,10 +539,11 @@ var x2 = setInterval(function() {
 var timer5;
 
 $('#btnHerisson5').click(function() {
-	timer5 = 600000;
-}); 
+	timer5 = 6000;
+	$("#btnHerisson6").css('display', 'none');
+	$("#texte-nid-2").css('display', 'block');
 
-var x2 = setInterval(function() {
+var x5 = setInterval(function() {
 
 	timer5 = timer5 - 1000;
 
@@ -556,12 +561,15 @@ var x2 = setInterval(function() {
   }
 
   // If the count down is finished, write some text 
-  if (timer3 < 0) {
+  if (timer5 < 0) {
     document.getElementById("timer5").innerHTML = "Votre portée est née !";
-    $("#btexte-nid").css('display', 'none');
+    $("#texte-nid-2").css('display', 'none');
     $("#btnHerisson6").css('display', 'block');
+    clearInterval(x5);
   }
 }, 1000);
+
+}); 
 
 
 // TIMER ROULER EN BOULE
@@ -570,33 +578,75 @@ var timer6 = 0;
 
 $('#btnVehicule2').click(function() {
 	timer6 = 20;
+	$("#btnVehicule3").css('display', 'none');
+
+
+	var x = setInterval(function() {
+
+		timer6 = timer6 - 1;
+	  // Time calculations for days, hours, minutes and seconds
+	  var minutes = Math.floor((timer6 % (60 * 60)) / 60);
+	  var seconds = Math.floor((timer6 % 60));
+
+	  // Display the result in the element with id="demo"
+
+	  if (seconds < 10) {
+	    document.getElementById("timer6").innerHTML = minutes + ":0" + seconds;
+	  }
+	  else {
+	  	document.getElementById("timer6").innerHTML = minutes + ":" + seconds;
+	  }
+
+	  // If the count down is finished, write some text 
+	  if (timer6 < 0) {
+	    document.getElementById("timer6").innerHTML = "Vous pouvez repartir";
+	    $("#btnVehicule3").css('display', 'block');
+
+	    clearInterval(x);
+	  }
+	}, 1000);
+
 }); 
 
-var x = setInterval(function() {
 
-	timer6 = timer6 - 1;
+// TIMER ROULER EN BOULE HUMAIN
 
-  // Time calculations for days, hours, minutes and seconds
-  var minutes = Math.floor((timer6 % (60 * 60)) / 60);
-  var seconds = Math.floor((timer6 % 60));
+var timer7 = 0;
 
-  // Display the result in the element with id="demo"
+$('#btnHumain2').click(function() {
+	timer7 = 10;
+	console.log(timer7);
+	$("#btnHumain3").css('display', 'none');
 
-  if (seconds < 10) {
-    document.getElementById("timer6").innerHTML = minutes + ":0" + seconds;
-  }
-  else {
-  	document.getElementById("timer6").innerHTML = minutes + ":" + seconds;
-  }
+	var y = setInterval(function() {
 
-  // If the count down is finished, write some text 
-  if (timer6 < 0) {
-    document.getElementById("timer6").innerHTML = "Vous pouvez repartir";
-    $("#btnVehicule3").css('display', 'block');
-  }
-}, 1000);
+		timer7 = timer7 - 1;
 
+	  // Time calculations for days, hours, minutes and seconds
+	  var minutes = Math.floor((timer7 % (60 * 60)) / 60);
+	  var seconds = Math.floor((timer7 % 60));
 
+	  // Display the result in the element with id="demo"
+
+	  if (seconds < 10) {
+	    document.getElementById("timer7").innerHTML = minutes + ":0" + seconds;
+	  }
+	  else {
+	  	document.getElementById("timer7").innerHTML = minutes + ":" + seconds;
+	  }
+
+	  // If the count down is finished, write some text 
+	  if (timer7 < 0) {
+	    document.getElementById("timer7").innerHTML = "Vous pouvez repartir";
+	    $("#btnHumain3").css('display', 'block');
+	    clearInterval(y);
+	  }
+	  
+	}, 1000);
+
+	
+
+}); 
 
 // COMPTEUR VIE
 
@@ -609,7 +659,6 @@ function updateCompteur(compteurVies) {
 			$("#vie"+i).css('display', 'none');
 		}
 	}
-	console.log("test");
 }
 
 
@@ -625,7 +674,6 @@ function updateCompteurNour(compteurNour) {
 			$("#nour"+i).css('display', 'none');
 		}
 	}
-	console.log("test");
 }
 
 
@@ -727,7 +775,6 @@ $('#btnRoute2').click(function() {
 	$("#modalRoute").css('display', 'none');
 	if (chosenRoute == "modalRouteMort") {
 		compteurVies = compteurVies - 1;
-		console.log(compteurVies);
 		updateCompteur(compteurVies);
 		localStorage.setItem('compteurVies', compteurVies);
 	}
@@ -813,7 +860,6 @@ $('#btnFinNour').click(function() {
 	$('#modalFinNour').css('display','block');
 	$("#modalNourriture").css('display', 'none');
 	compteurNour = compteurNour + 1;
-	console.log(compteurNour);
 	localStorage.setItem('compteurNour', compteurNour);
 	updateCompteurNour(compteurNour);
 }); 
@@ -918,12 +964,12 @@ $('#btnReprod4').click(function() {
 	$("#modalReproduction4").css('display','block');
 	$("#modalReproduction3").css('display', 'none');
 	setTimeout(function(){ 
-		$("#infoProc5").css('display', 'block'); 
+		$("#infoProc4").css('display', 'block'); 
 	}, 5000);
 }); 
 
-$('#btninfoProc5').click(function() {
-	$("#infoProc5").css('display', 'none'); 
+$('#btninfoProc4').click(function() {
+	$("#infoProc4").css('display', 'none'); 
 }); 
 
 
@@ -972,9 +1018,8 @@ $('#btnReprod6').click(function() {
 	$("#modalReproduction6").css('display', 'block');
 	var num3 = getRandomInt(nombrePetits.length);
 	var nombreNes = nombrePetits[num3];
-	$('#fin_texte2').append(nombreNes + ' petits hérissons !');
+	$('#fin_texte2').html(nombreNes + ' petits hérissons !');
 	compteurVies = Number(compteurVies) + Number(nombreNes);
-	console.log('fin repro:' + compteurVies);
 	localStorage.setItem('compteurVies', compteurVies);
 	updateCompteur(compteurVies);
 }); 
@@ -1071,6 +1116,33 @@ $('#btnAccueilHumain').click(function() {
 	$("#modalHumain").css('display', 'none');
 });
 
+// HUMAIN 2
+
+$('#btnHumain2').click(function() {
+	$("#modalHumain").css('display', 'none');
+	$('#modalHumain2').css('display','block');
+});
+
+$("#modalHumain2 .close").click(function() {
+	$("#modalHumain2").css('display', 'none');
+});
+
+$(window).click(function(event) {
+	if (event.target.id == "modalHumain2" ) {
+		$("#modalHumain2").css('display', 'none');
+	}
+});
+
+$('#btnAccueilHumain2').click(function() {
+	$("#modalHumain2").css('display', 'none');
+	$("#modalHumain").css('display', 'block');
+});
+
+$('#btnHumain3').click(function() {
+	$("#modalHumain2").css('display', 'none');
+});
+
+
 
 // HERISSON
 
@@ -1159,6 +1231,7 @@ $('#btnHerisson5').click(function() {
 	$("#modalHerisson4").css('display', 'none');
 });
 
+
 $("#modalHerisson5 .close").click(function() {
 	$("#modalHerisson5").css('display', 'none');
 });
@@ -1174,11 +1247,37 @@ $('#btnAccueilHerisson5').click(function() {
 	$("#modalHerisson4").css('display', 'block');
 });  
 
+
 $('#btnHerisson6').click(function() {
-	$("#modalHerisson5").css('display','block');
-	$("#modalHerisson4").css('display', 'none');
+	$("#modalHerisson5").css('display', 'none');
+	$("#modalHerisson6").css('display', 'block');
+	var num3 = getRandomInt(nombrePetits.length);
+	var nombreNes = nombrePetits[num3];
+	$('#fin_texte3').html(nombreNes + ' petits hérissons !');
+	compteurVies = Number(compteurVies) + Number(nombreNes);
+	localStorage.setItem('compteurVies', compteurVies);
+	updateCompteur(compteurVies);
+}); 
+
+
+$("#modalHerisson6 .close").click(function() {
+	$("#modalHerisson6").css('display', 'none');
 });
 
+$(window).click(function(event) {
+	if (event.target.id == "modalHerisson6" ) {
+		$("#modalHerisson6").css('display', 'none');
+	}
+});
+
+$('#btnAccueilHerisson6').click(function() {
+	$("#modalHerisson6").css('display', 'none');
+	$('#modalHerisson5').css('display','block');
+}); 
+
+$('#btnHerisson7').click(function() {
+	$("#modalHerisson6").css('display', 'none');
+}); 
 
 
 
@@ -1265,5 +1364,375 @@ $('#btnattaqueRandom3').click(function() {
 
 
 
+// FIN
+
+$('#btnFin').click(function() {
+	$('#modalFin1').css('display','block');
+});
+
+$("#modalFin1 .close").click(function() {
+	$("#modalFin1").css('display', 'none');
+});
+
+$(window).click(function(event) {
+	if (event.target.id == "modalFin1" ) {
+		$("#modalFin1").css('display', 'none');
+	}
+});
+
+$('#btnAccueilFin').click(function() {
+	$("#modalFin1").css('display', 'none');
+});
+
+$('#btnFin2').click(function() {
+	$("#modalFin1").css('display', 'none');
+	if(distance > 1800000){
+		$("#modalFin2-1").css('display', 'block');
+	}
+		else if (distance > 0) {
+			$("#modalFin2-2").css('display', 'block');
+		}
+			else {
+				$("#modalFin2-3").css('display', 'block');
+			}
+});
+
+$("#modalFin2-1 .close").click(function() {
+	$("#modalFin2-1").css('display', 'none');
+});
+
+$(window).click(function(event) {
+	if (event.target.id == "modalFin2-1" ) {
+		$("#modalFin2-1").css('display', 'none');
+	}
+});
+
+$("#modalFin2-2 .close").click(function() {
+	$("#modalFin2-2").css('display', 'none');
+});
+
+$(window).click(function(event) {
+	if (event.target.id == "modalFin2-2" ) {
+		$("#modalFin2-2").css('display', 'none');
+	}
+});
+
+$("#modalFin2-3 .close").click(function() {
+	$("#modalFin2-3").css('display', 'none');
+});
+
+$(window).click(function(event) {
+	if (event.target.id == "modalFin2-3" ) {
+		$("#modalFin2-3").css('display', 'none');
+	}
+});
 
 
+$('#btnAccueilFin2-1').click(function() {
+	$("#modalFin1").css('display', 'block');
+	$("#modalFin2-1").css('display', 'none');
+});
+$('#btnAccueilFin2-2').click(function() {
+	$("#modalFin1").css('display', 'block');
+	$("#modalFin2-2").css('display', 'none');
+});
+$('#btnAccueilFin2-3').click(function() {
+	$("#modalFin1").css('display', 'block');
+	$("#modalFin2-3").css('display', 'none');
+});
+
+
+$('#btnFin3-1').click(function() {
+	// $("#modalFin2-1").css('display', 'none');
+	if (compteurNour < compteurVies && compteurVies < nbrParticipants){
+		$("#modalFin3-1-1").css('display', 'block');
+	}
+		else if (compteurNour < compteurVies && compteurVies == nbrParticipants){
+			$("#modalFin3-2-1").css('display', 'block');
+			document.getElementById("nbrHer1").innerHTML = compteurNour;
+		}
+			else if (compteurNour < compteurVies && compteurVies > nbrParticipants){
+				$("#modalFin3-3-1").css('display', 'block');
+				document.getElementById("nbrHer2").innerHTML = compteurNour;
+			} 
+				else if(compteurNour == compteurVies && compteurVies < nbrParticipants){
+					$("#modalFin3-1-2").css('display', 'block');
+				}
+					else if(compteurNour >= compteurVies && compteurVies == nbrParticipants){
+						$("#modalFin3-2-2").css('display', 'block');
+					}
+						else if(compteurNour == compteurVies && compteurVies > nbrParticipants){
+							$("#modalFin3-3-2").css('display', 'block');
+						}
+							else if(compteurNour > compteurVies && compteurVies < nbrParticipants){
+								$("#modalFin3-1-3").css('display', 'block');
+							}
+								else if(compteurNour > compteurVies && compteurVies > nbrParticipants){
+									$("#modalFin3-3-3").css('display', 'block');
+								}
+});
+
+$('#btnFin3-2').click(function() {
+	// $("#modalFin2-2").css('display', 'none');
+	if(compteurNour < compteurVies && compteurVies < nbrParticipants){
+		$("#modalFin3-1-1").css('display', 'block');
+	}
+		else if (compteurNour < compteurVies && compteurVies == nbrParticipants){
+			$("#modalFin3-2-1").css('display', 'block');
+			document.getElementById("nbrHer1").innerHTML = compteurNour;
+		}
+			else if (compteurNour < compteurVies && compteurVies > nbrParticipants){
+				$("#modalFin3-3-1").css('display', 'block');
+				document.getElementById("nbrHer2").innerHTML = compteurNour;
+			} 
+				else if(compteurNour == compteurVies && compteurVies < nbrParticipants){
+					$("#modalFin3-1-2").css('display', 'block');
+				}
+					else if(compteurNour >= compteurVies && compteurVies == nbrParticipants){
+						$("#modalFin3-2-2").css('display', 'block');
+					}
+						else if(compteurNour == compteurVies && compteurVies > nbrParticipants){
+							$("#modalFin3-3-2").css('display', 'block');
+						}
+							else if(compteurNour > compteurVies && compteurVies < nbrParticipants){
+								$("#modalFin3-1-3").css('display', 'block');
+							}
+								else if(compteurNour > compteurVies && compteurVies > nbrParticipants){
+									$("#modalFin3-3-3").css('display', 'block');
+								}
+});
+
+$('#btnFin3-3').click(function() {
+	// $("#modalFin2-3".css('display', 'none');
+	if(compteurNour < compteurVies && compteurVies < nbrParticipants){
+		$("#modalFin3-1-1").css('display', 'block');
+	}
+		else if (compteurNour < compteurVies && compteurVies == nbrParticipants){
+			$("#modalFin3-2-1").css('display', 'block');
+			document.getElementById("nbrHer1").innerHTML = compteurNour;
+		}
+			else if (compteurNour < compteurVies && compteurVies > nbrParticipants){
+				$("#modalFin3-3-1").css('display', 'block');
+				document.getElementById("nbrHer2").innerHTML = compteurNour;
+			} 
+				else if(compteurNour == compteurVies && compteurVies < nbrParticipants){
+					$("#modalFin3-1-2").css('display', 'block');
+				}
+					else if(compteurNour >= compteurVies && compteurVies == nbrParticipants){
+						$("#modalFin3-2-2").css('display', 'block');
+					}
+						else if(compteurNour == compteurVies && compteurVies > nbrParticipants){
+							$("#modalFin3-3-2").css('display', 'block');
+						}
+							else if(compteurNour > compteurVies && compteurVies < nbrParticipants){
+								$("#modalFin3-1-3").css('display', 'block');
+							}
+								else if(compteurNour > compteurVies && compteurVies > nbrParticipants){
+									$("#modalFin3-3-3").css('display', 'block');
+								}
+});
+
+
+$("#modalFin3-1-1 .close").click(function() {
+	$("#modalFin3-1-1").toggle();
+	$("#modalFin2-1").css('display', 'none');
+	$("#modalFin2-2").css('display', 'none');
+	$("#modalFin2-3").css('display', 'none');
+});
+$(window).click(function(event) {
+	if (event.target.id == "modalFin3-1-1" ) {
+		$("#modalFin3-1-1").toggle();
+		$("#modalFin2-1").css('display', 'none');
+		$("#modalFin2-2").css('display', 'none');
+		$("#modalFin2-3").css('display', 'none');
+	}
+});
+
+$("#modalFin3-2-1 .close").click(function() {
+	$("#modalFin3-2-1").toggle();
+	$("#modalFin2-1").css('display', 'none');
+	$("#modalFin2-2").css('display', 'none');
+	$("#modalFin2-3").css('display', 'none');
+});
+$(window).click(function(event) {
+	if (event.target.id == "modalFin3-2-1" ) {
+		$("#modalFin3-2-1").toggle();
+		$("#modalFin2-1").css('display', 'none');
+		$("#modalFin2-2").css('display', 'none');
+		$("#modalFin2-3").css('display', 'none');
+	}
+});
+
+$("#modalFin3-3-1 .close").click(function() {
+	$("#modalFin3-3-1").toggle();
+	$("#modalFin2-1").css('display', 'none');
+	$("#modalFin2-2").css('display', 'none');
+	$("#modalFin2-3").css('display', 'none');
+});
+$(window).click(function(event) {
+	if (event.target.id == "modalFin3-3-1" ) {
+		$("#modalFin3-3-1").toggle();
+		$("#modalFin2-1").css('display', 'none');
+		$("#modalFin2-2").css('display', 'none');
+		$("#modalFin2-3").css('display', 'none');
+	}
+});
+
+$("#modalFin3-1-2 .close").click(function() {
+	$("#modalFin3-1-2").toggle();
+	$("#modalFin2-1").css('display', 'none');
+	$("#modalFin2-2").css('display', 'none');
+	$("#modalFin2-3").css('display', 'none');
+});
+$(window).click(function(event) {
+	if (event.target.id == "modalFin3-1-2" ) {
+		$("#modalFin3-1-2").toggle();
+		$("#modalFin2-1").css('display', 'none');
+		$("#modalFin2-2").css('display', 'none');
+		$("#modalFin2-3").css('display', 'none');
+	}
+});
+
+$("#modalFin3-2-2 .close").click(function() {
+	$("#modalFin3-2-2").toggle();
+	$("#modalFin2-1").css('display', 'none');
+	$("#modalFin2-2").css('display', 'none');
+	$("#modalFin2-3").css('display', 'none');
+});
+$(window).click(function(event) {
+	if (event.target.id == "modalFin3-2-2" ) {
+		$("#modalFin3-2-2").toggle();
+		$("#modalFin2-1").css('display', 'none');
+		$("#modalFin2-2").css('display', 'none');
+		$("#modalFin2-3").css('display', 'none');
+	}
+});
+
+$("#modalFin3-3-2 .close").click(function() {
+	$("#modalFin3-3-2").toggle();
+	$("#modalFin2-1").css('display', 'none');
+	$("#modalFin2-2").css('display', 'none');
+	$("#modalFin2-3").css('display', 'none');
+});
+$(window).click(function(event) {
+	if (event.target.id == "modalFin3-3-2" ) {
+		$("#modalFin3-3-2").toggle();
+		$("#modalFin2-1").css('display', 'none');
+		$("#modalFin2-2").css('display', 'none');
+		$("#modalFin2-3").css('display', 'none');
+	}
+});
+
+$("#modalFin3-1-3 .close").click(function() {
+	$("#modalFin3-1-3").toggle();
+	$("#modalFin2-1").css('display', 'none');
+	$("#modalFin2-2").css('display', 'none');
+	$("#modalFin2-3").css('display', 'none');
+});
+$(window).click(function(event) {
+	if (event.target.id == "modalFin3-1-3" ) {
+		$("#modalFin3-1-3").toggle();
+		$("#modalFin2-1").css('display', 'none');
+		$("#modalFin2-2").css('display', 'none');
+		$("#modalFin2-3").css('display', 'none');
+	}
+});
+
+$("#modalFin3-3-3 .close").click(function() {
+	$("#modalFin3-3-3").css('display', 'none');
+	$("#modalFin2-1").css('display', 'none');
+	$("#modalFin2-2").css('display', 'none');
+	$("#modalFin2-3").css('display', 'none');
+});
+$(window).click(function(event) {
+	if (event.target.id == "modalFin3-3-3" ) {
+		$("#modalFin3-3-3").toggle();
+		$("#modalFin2-1").css('display', 'none');
+		$("#modalFin2-2").css('display', 'none');
+		$("#modalFin2-3").css('display', 'none');
+	}
+});
+
+
+
+$('#btnAccueilFin3-1-1').click(function() {
+	$("#modalFin3-1-1").css('display', 'none');
+});
+$('#btnAccueilFin3-2-1').click(function() {
+	$("#modalFin3-2-1").css('display', 'none');
+});
+$('#btnAccueilFin3-3-1').click(function() {
+	$("#modalFin3-3-1").css('display', 'none');
+});
+$('#btnAccueilFin3-1-2').click(function() {
+	$("#modalFin3-1-2").css('display', 'none');
+});
+$('#btnAccueilFin3-2-2').click(function() {
+	$("#modalFin3-2-2").css('display', 'none');
+});
+$('#btnAccueilFin3-3-2').click(function() {
+	$("#modalFin3-3-2").css('display', 'none');
+});
+$('#btnAccueilFin3-1-3').click(function() {
+	$("#modalFin3-1-3").css('display', 'none');
+});
+$('#btnAccueilFin3-3-3').click(function() {
+	$("#modalFin3-3-3").css('display', 'none');
+});
+
+
+$('#btnFin4-1').click(function() {
+	$("#modalFin3-1-1").css('display', 'none');
+	$("#modalFin2-1").css('display', 'none');
+	$("#modalFin2-2").css('display', 'none');
+	$("#modalFin2-3").css('display', 'none');
+});
+
+$('#btnFin4-2').click(function() {
+	$("#modalFin3-2-1").css('display', 'none');
+	$("#modalFin2-1").css('display', 'none');
+	$("#modalFin2-2").css('display', 'none');
+	$("#modalFin2-3").css('display', 'none');
+});
+
+$('#btnFin4-3').click(function() {
+	$("#modalFin3-3-1").css('display', 'none');
+	$("#modalFin2-1").css('display', 'none');
+	$("#modalFin2-2").css('display', 'none');
+	$("#modalFin2-3").css('display', 'none');
+});
+
+$('#btnFin4-4').click(function() {
+	$("#modalFin3-1-2").css('display', 'none');
+	$("#modalFin2-1").css('display', 'none');
+	$("#modalFin2-2").css('display', 'none');
+	$("#modalFin2-3").css('display', 'none');
+});
+
+$('#btnFin4-5').click(function() {
+	$("#modalFin3-2-2").css('display', 'none');
+	$("#modalFin2-1").css('display', 'none');
+	$("#modalFin2-2").css('display', 'none');
+	$("#modalFin2-3").css('display', 'none');
+});
+
+$('#btnFin4-6').click(function() {
+	$("#modalFin3-3-2").css('display', 'none');
+	$("#modalFin2-1").css('display', 'none');
+	$("#modalFin2-2").css('display', 'none');
+	$("#modalFin2-3").css('display', 'none');
+});
+
+$('#btnFin4-7').click(function() {
+	$("#modalFin3-1-3").css('display', 'none');
+	$("#modalFin2-1").css('display', 'none');
+	$("#modalFin2-2").css('display', 'none');
+	$("#modalFin2-3").css('display', 'none');
+});
+
+$('#btnFin4-8').click(function() {
+	$("#modalFin3-3-3").css('display', 'none');
+	$("#modalFin2-1").css('display', 'none');
+	$("#modalFin2-2").css('display', 'none');
+	$("#modalFin2-3").css('display', 'none');
+});

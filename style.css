@@ -112,12 +112,13 @@ body {
   margin-top: 2vh;
   margin-left: auto;
   margin-right:auto;
-  padding: 10px;
-  width: 85%;
-  height:95%;
+  padding: 3.5vw;
+  width: 88%;
+  height:93%;
   border: 1px solid #0fdbba;
   border-radius: 20px;
   box-shadow: 1px 1px 19px 3px rgba(0,0,0,0.2);
+  align-content: center;
 }
 
 .modal-content-clair {
@@ -125,12 +126,27 @@ body {
   margin-top: 2vh;
   margin-left: auto;
   margin-right:auto;
-  padding: 10px;
-  width: 85%;
-  height:95%;
+  padding: 3.5vw;
+  width: 88%;
+  height:93%;
+  border: 1px solid rgba(77,255,255,1);
+  border-radius: 20px;
+  box-shadow: 1px 1px 19px 3px rgba(0,0,0,0.2);
+  align-content: center;
+}
+
+.modal-content-fin {
+  background: rgba(18,56,224,0.8);
+  margin-top: 2vh;
+  margin-left: auto;
+  margin-right:auto;
+  padding: 3.5vw;
+  width: 88%;
+  height:90%;
   border: 1px solid #0fdbba;
   border-radius: 20px;
   box-shadow: 1px 1px 19px 3px rgba(0,0,0,0.2);
+  align-content: center;
 }
 
 
@@ -184,7 +200,7 @@ body {
   position:fixed;
   bottom:0;
   left:0;
-  z-index:2;
+  z-index:1;
   height: 11vh;
   width: 100%;
   background-color: rgba(255,255,255,0.7);
@@ -259,6 +275,20 @@ body {
   font-weight: 500;
 }
 
+.fileImage {
+  background: blue;
+  color: white;
+  font-size: 0.8rem;
+/*  margin-top: 0.8rem;*/
+  border-radius: 20px;
+  border: 0;
+  text-transform: uppercase;
+  text-align: center;
+  font-family: "Tomorrow";
+  font-weight: 500;
+}
+
+
 .boutonClearStorage {
   height: 100px;
   width: 100px;
@@ -302,6 +332,7 @@ body {
   background: rgba(255, 255, 255, 0.7)
   margin-top:0vw;
   width: 100%;
+  align-content: center;
 }
 
 .popup-tuto {
@@ -507,14 +538,14 @@ body {
 /* TEXTES */
 
 .popup {
-/*  position:absolute;*/
+  position:relative;
   width:80vw;
   text-align: center;
   color: #1238E0;
   background-color: rgba(255, 255, 255, 0.8);
   border-radius: 20px;
   border:0.5vw solid #0fdbba;
-/*  margin: 15% auto;*/
+  margin: 0 auto;
 /*  margin-top:-5vw;*/
   padding:10px;
   font-size: 18px;
@@ -542,9 +573,27 @@ body {
 
 #popup-reprod-4 {
   position: relative;
-  margin-top: -50vw;
-  z-index:3;
+  margin-top: -30vh;
+  z-index:2;
 }
+
+.popup-fin {
+/*  position:absolute;*/
+  width:80vw;
+  text-align: center;
+  color: #1238E0;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 20px;
+  border:0.5vw solid #0fdbba;
+  margin-top:10vh;
+  padding:10px;
+  font-size: 18px;
+  text-align:center;
+  z-index:3;
+  max-width: 100%;
+}
+
+
 
 .texte-gros {
   position:relative;
@@ -656,7 +705,29 @@ body {
   margin-left: auto;
   margin-right: auto;
   margin-top: 0vh;
-  margin-bottom: -1vh;
+  margin-bottom: 1vh;
+  z-index: 1;
+}
+
+.illu-classique-decale {
+  width: 80vw;
+  position:relative;
+  display:block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0vh;
+  margin-bottom: -10vh;
+  z-index: 1;
+}
+
+.illu-classique-petit {
+  width: 50vw;
+  position:relative;
+  display:block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0vh;
+  margin-bottom: 1vh;
   z-index: 1;
 }
 
@@ -1072,12 +1143,12 @@ body {
   position: fixed;
   align-content: center;
   left: 54vw;
-  bottom: 5px;
-  z-index: 3;
+  bottom: 1.5vh;
+  z-index: 2;
 }
 
-#btnNext:hover,
-#btnNext:focus {
+.btnNext:hover,
+.btnNext:focus {
   cursor: pointer;
 }
 
@@ -1087,15 +1158,43 @@ body {
     position:fixed;
     align-content: center;
     left: 28vw;
-    bottom: 5px;
-    z-index:3;
+    bottom: 1.5vh;
+    z-index:2;
 }
 
-#btnPrev:hover,
-#btnPrev:focus {
+.btnPrev:hover,
+.btnPrev:focus {
   cursor: pointer;
 }
 
+
+.btnNextFin {
+  width: 16vw;
+  position: fixed;
+  align-content: center;
+  left: 54vw;
+  bottom: 5vh;
+  z-index: 3;
+}
+
+.btnNextFin:hover,
+.btnNextFin:focus {
+  cursor: pointer;
+}
+
+.btnPrevFin {
+  width: 16vw;
+  position:fixed;
+  align-content: center;
+  left: 28vw;
+  bottom: 5vh;
+  z-index:3;
+}
+
+.btnPrevFin:hover,
+.btnPrevFIn:focus {
+  cursor: pointer;
+}
 
 
 #btnReprod4 {
@@ -1117,6 +1216,10 @@ body {
 }
 
 #btnVehicule3 {
+  display: none;
+}
+
+#btnHumain3 {
   display: none;
 }
 
@@ -1145,6 +1248,18 @@ body {
   cursor: pointer;
 }
 
+
+#btnFin {
+  width: 16vw;
+  position: fixed;
+  left: 76vw;
+  bottom: 10vh;
+}
+
+.btnFin:hover,
+.btnFin:focus {
+  cursor: pointer;
+}
 
 
 /*.icone-rond {
@@ -1189,6 +1304,7 @@ body {
 /*    margin: 15% auto;*/
 /*    padding: 20px;*/
     width: 80%;
+    align-content: center;
   }
 
   /* The Close Button */
@@ -1221,13 +1337,13 @@ body {
 
   /* TEXTES */
 
-  .popup {
+/*  .popup {
     border:2px solid #0fdbba;
-/*    margin: 15% auto;*/
+    margin: 15% auto;
     padding:10px;
     font-size: 16px;
     z-index: 3;
-  }
+  }*/
 
 
   .texte-gros {

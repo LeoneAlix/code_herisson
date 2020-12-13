@@ -252,7 +252,7 @@
       <!-- Modal content -->
       <div class="modal-content" id="modal-clair-3">
         <span class="close">&times;</span>
-        <img class="illu-classique" src="assets/illu_herbace.png">
+        <img class="illu-classique-decale" src="assets/illu_herbace.png">
         <div class="popup">Sur les surfaces herbacées, vous pouvez vous permettre de marcher, vous reposer, et même chasser ! Construire un nid demandera d’être un peu plus habile, mais tout est réuni pour une reproduction canon !</div>
         <img id="btnAccueilHerbace" class="btnPrev" src="assets/icone_prev_b.png">
       </div>
@@ -326,6 +326,8 @@
 
 </div>
 
+
+
    <div class="nav-col2">
     <!-- Trigger/Open The Modal NOURRITURE -->
     <!-- Bouton -->
@@ -340,8 +342,9 @@
         <div class="popup">Vous avez trouvé de quoi vous sustenter ? Prenez une photo pour gagner un point nourriture ! </div>
 
           <form action="index.php" method="post" enctype="multipart/form-data">
-            <input type="file" name="image" accept="image/*" capture />
-            <input type="submit" value="Upload" />
+            <input type="file" name="image" id="file-input" accept="image/*" capture style="visibility:hidden;"/>
+            <label for="file-input" style="display: inline-block;" class="fileImage">Prendre une photo</label>
+            <input class="fileImage" type="submit" value="Upload" style="display: inline-block;"/>
           </form>
 
         <img id="btnFinNour" class="btnNext" src="assets/icone_photo.png">
@@ -379,7 +382,7 @@
       <div class="modal-content">
         <span class="close">&times;</span>
         <img class="illu-classique"  src="assets/illu_reproduction_1.png">
-        <div class="popup">Vous avez trouvé le partenaire idéal pour vous accoupler ? Super ! Voici comment transformer l’essai ! </div>
+        <div class="popup">Vous avez trouvé le partenaire idéal pour vous accoupler ? <p style="margin-top:3px; margin-bottom:3px">Super ! Voici comment transformer l’essai ! </p></div>
       </div>
         <img id="btnReprod2" class="btnNext" src="assets/icone_next.png">
         <img id="btnAccueilReprod" class="btnPrev" src="assets/icone_prev.png">
@@ -392,7 +395,7 @@
         <!-- Modal content -->
         <div class="modal-content">
           <span class="close">&times;</span>
-          <img class="illu-classique" src="assets/illu_reproduction_2.png">
+          <img class="illu-classique-petit" src="assets/illu_reproduction_2.png">
           <div class="popup">Pour séduire votre partenaire, laissez-vous embarquer dans une parade nuptiale improvisée. L’un des hérissons reste au centre et pivote sur lui-même, l’autre décrit un cercle autour de lui à 1 m de distance, ensuite, à vous d’improviser une parade dansée pendant 1 minute ! </div>
         </div>
           <img id="btnReprod3" class="btnNext" src="assets/icone_next.png">
@@ -415,7 +418,7 @@
         </div>
           <img id="btnReprod4" class="btnNext" src="assets/icone_next.png">
           <img id="btnAccueilReprod3" class="btnPrev" src="assets/icone_prev.png">
-        </div>
+      </div>
 
 
 
@@ -445,7 +448,8 @@
           <img class="illu-classique" id="illu-reproduction-4" src="assets/illu_reproduction_4.png">
           <div class="popup" id="popup-reprod-4">
           <div id="texte-nid">
-          Pour faire votre nid, il vous faut trouver un endroit adapté dans un lieu herbacé ou boisé, et trouver de quoi le construire ! (feuilles, branchages,...). Rien de compliqué, suivez votre instinct de petit hérisson pour construire l’abri qui accueillera vos petits !</div><div id="timer3"></div></div>
+          Pour faire votre nid, il vous faut trouver un endroit adapté dans un lieu herbacé ou boisé, et trouver de quoi le construire ! (feuilles, branchages,...). Rien de compliqué, suivez votre instinct de petit hérisson pour construire l’abri qui accueillera vos petits !</div>
+          <div id="timer3"></div></div>
         </div>
           <img id="btnReprod6" class="btnNext" src="assets/icone_next_b.png">
           <img id="btnAccueilReprod5" class="btnPrev" src="assets/icone_prev_b.png">
@@ -458,13 +462,13 @@
         <div class="modal-content">
           <span class="close">&times;</span>
           <img class="illu-classique" id="illu-reproduction-4" src="assets/illu_reproduction_5.png">
-          <div class="popup">Bravo ! Vous avez donné naissance à une portée de <div id="fin_texte2"></div></div></div>
+            <div class="popup">Bravo ! Vous avez donné naissance à une portée de <div id="fin_texte2"></div>
+            </div>
+          </div>
    
           <img id="btnReprod7" class="btnNext" src="assets/icone_next.png">
           <img id="btnAccueilReprod6" class="btnPrev" src="assets/icone_prev.png">
         </div>
-
-
 
 
 
@@ -495,14 +499,12 @@
 
         <!-- Modal content -->
         <div class="modal-content">
-          <span class="close">&times;</span>
           <img class="illu-classique" src="assets/herisson_boule.png">
           <div class="popup">Tout le monde se roule en boule pendant 20 secondes ! 
           <div id="timer6"></div>
-        </div>
-        </div>
+          </div>
+          </div>
           <img id="btnVehicule3" class="btnNext" src="assets/icone_next.png">
-          <img id="btnAccueilVehicule2" class="btnPrev" src="assets/icone_prev.png">
         </div>
 
 
@@ -516,11 +518,26 @@
       <div class="modal-content-clair">
         <span class="close">&times;</span>
         <img class="illu-classique" src="assets/illu_humain.png">
-        <div class="popup"><p>Des humains ! Pannique !</p> <p>Combien sont-ils ? Est-ce qu’ils s’approchent  à moins d’un mètre de vous ?</p></div>
+        <div class="popup"><p style="margin-top:3px; margin-bottom:10px">Des humains ! Pannique ! Sont-ils plus de deux ? Est-ce qu’ils s’approchent  à moins d’un mètre de vous ?</p>
+          <p style="margin-top:3px; margin-bottom:10px">Si la réponse est oui, roulez-vous en boulle !</p></div>
         <img id="btnAccueilHumain" class="btnPrev" src="assets/icone_prev_b.png">
+        <img id="btnHumain2" class="btnNext" src="assets/icone_next_b.png">
       </div>
 
     </div>
+
+    <!-- The Modal HUMAIN 2-->
+    <div id="modalHumain2" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+        <img class="illu-classique" src="assets/herisson_boule.png">
+          <div class="popup">Tout le monde se roule en boule pendant 10 secondes ! 
+          <div id="timer7"></div>
+          </div>
+          </div>
+        <img id="btnHumain3" class="btnNext" src="assets/icone_next.png">
+      </div>
+
 
 
     <!-- Trigger/Open The Modal HERISSON -->
@@ -534,7 +551,7 @@
           <span class="close">&times;</span>
           <img class="illu-classique" id="illu-herisson" src="assets/illu_herisson_2.png">
           <div class="popup">Hey hey ! Une autre équipe de hérissons, quelle excitation ! C'est peut-être le début d'une aventure de procréation, à vous de jouer pour séduire votre moitié !</div>
-          <img id="btnHerisson2" class="btnNext" src="assets/icone_photo.png">
+          <img id="btnHerisson2" class="btnNext" src="assets/icone_next.png">
         <img id="btnAccueilHerisson" class="btnPrev" src="assets/icone_prev.png">
         </div>
       </div>
@@ -545,10 +562,10 @@
         <!-- Modal content -->
         <div class="modal-content">
           <span class="close">&times;</span>
-          <img class="illu-classique" src="assets/illu_reproduction_2.png">
+          <img class="illu-classique-petit" src="assets/illu_reproduction_2.png">
           <div class="popup">Pour séduire votre partenaire, laissez-vous embarquer dans une parade nuptiale improvisée. L’un des hérissons reste au centre et pivote sur lui-même, l’autre décrit un cercle autour de lui à 1 m de distance, ensuite, à vous d’improviser une parade dansée pendant 1 minute ! </div>
         </div>
-          <img id="btnHerisson3" class="btnNext" src="assets/icone_photo.png">
+          <img id="btnHerisson3" class="btnNext" src="assets/icone_next.png">
           <img id="btnAccueilHerisson2" class="btnPrev" src="assets/icone_prev.png">
         </div>
 
@@ -564,7 +581,7 @@
           <div id="timer4"></div>
         </div>
         </div>
-          <img id="btnHerisson4" class="btnNext" src="assets/icone_photo.png">
+          <img id="btnHerisson4" class="btnNext" src="assets/icone_next.png">
           <img id="btnAccueilHerisson3" class="btnPrev" src="assets/icone_prev.png">
         </div>
 
@@ -593,12 +610,33 @@
           <span class="close">&times;</span>
           <img class="illu-classique" id="illu-reproduction-4" src="assets/illu_reproduction_4.png">
           <div class="popup" id="popup-reprod-4">
-          <div id="timer5"></div><div id="texte-nid">
-          Pour faire votre nid, il vous faut trouver un endroit adapté dans un lieu herbacé ou boisé, et trouver de quoi le construire ! (feuilles, branchages,...). Rien de compliqué, suivez votre instinct de petit hérisson pour construire l’abri qui accueillera vos petits !</div></div>
-        </div>
+          <div id="texte-nid-2">
+          Pour faire votre nid, il vous faut trouver un endroit adapté dans un lieu herbacé ou boisé, et trouver de quoi le construire ! (feuilles, branchages,...). Rien de compliqué, suivez votre instinct de petit hérisson pour construire l’abri qui accueillera vos petits !</div>
+          <div id="timer5"></div></div>
+          </div>
           <img id="btnHerisson6" class="btnNext" src="assets/icone_next_b.png">
           <img id="btnAccueilHerisson5" class="btnPrev" src="assets/icone_prev_b.png">
         </div>
+
+
+         <!-- The Modal REPRODUCTION 6 -->
+      <div id="modalHerisson6" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <img class="illu-classique" id="illu-reproduction-4" src="assets/illu_reproduction_5.png">
+            <div class="popup">Bravo ! Vous avez donné naissance à une portée de <div id="fin_texte3"></div>
+            </div>
+          </div>
+   
+          <img id="btnHerisson7" class="btnNext" src="assets/icone_next.png">
+          <img id="btnAccueilHerisson6" class="btnPrev" src="assets/icone_prev.png">
+        </div>
+
+
+
+
 
       <div class="nav-li1">
         <div id="compteur-vie3">
@@ -631,8 +669,175 @@
 
         </div>
       </div>
+
+
+
+
+
+
+
+
+    <!-- Bouton SCENARIO FIN-->
+    <img id="btnFin" src="assets/icone-fin.png">
+
+    <!-- The Modal FIN 1-->
+    <div id="modalFin1" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content-fin">
+        <span class="close">&times;</span>
+        <div class="popup-fin"><p>Bravo, vous voilà arrivés au centre de transformation procédurale ! C’est aussi le terme de votre traversée urbaine en hérisson et regardez, vous commencez déjà à reprendre forme humaine ! </p></div>
+        <img id="btnFin2" class="btnNextFin" src="assets/icone_next.png">
+        <img id="btnAccueilFin" class="btnPrevFin" src="assets/icone_prev.png">
+      </div>
+
+    </div>
+
+    <!-- The Modal FIN 2-1-->
+    <div id="modalFin2-1" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content-fin">
+        <span class="close">&times;</span>
+        <div class="popup-fin"><p>Et vous avez vraiment carburé ! Voyons voir si cette rapidité s’accompagne de compteurs au complet ! </p></div>
+        <img id="btnFin3-1" class="btnNextFin" src="assets/icone_next.png">
+        <img id="btnAccueilFin2-1" class="btnPrevFin" src="assets/icone_prev.png">
+      </div>
+
+    </div>
+
+
+    <!-- The Modal FIN 2-2-->
+    <div id="modalFin2-2" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content-fin">
+        <span class="close">&times;</span>
+        <div class="popup-fin"><p>Vous avez fini avant l’heure fatidique. Félicitations, vraiment pas mal pour une première traversée ! Voyons voir si cela s’accompagne de compteurs au complet ! </p></div>
+        <img id="btnFin3-2" class="btnNextFin" src="assets/icone_next.png">
+        <img id="btnAccueilFin2-2" class="btnPrevFin" src="assets/icone_prev.png">
+      </div>
+
+    </div>
+
+    <!-- The Modal FIN 2-3-->
+    <div id="modalFin2-3" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content-fin">
+        <span class="close">&times;</span>
+        <div class="popup-fin"><p>Mais vous avez malheureusement dépassé le temps accordé. L’automne est déjà bien entamé et vous devriez déjà être en train d’hiberner. Vous garderez par conséquent encore un temps quelques réflexes de hérisson. </p></div>
+        <img id="btnFin3-3" class="btnNextFin" src="assets/icone_next.png">
+        <img id="btnAccueilFin2-3" class="btnPrevFin" src="assets/icone_prev.png">
+      </div>
+
+    </div>
+
+
+    <!-- The Modal FIN 3-1-1 // li 1 col 1-->
+    <div id="modalFin3-1-1" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content-fin">
+        <span class="close">&times;</span>
+        <div class="popup-fin"><p>Manque de chance, votre population a bien diminué au cours de la traversée, et vous êtes encore plus légers niveau nourriture. Vous n’arrivez pas à vous départager et décidez de rester tous ensemble en hérisson.  </p></div>
+        <img id="btnFin4-1" class="btnNextFin" src="assets/icone_next.png">
+        <img id="btnAccueilFin3-1-1" class="btnPrevFin" src="assets/icone_prev.png">
+      </div>
+
+    </div>
+
+    <!-- The Modal FIN 3-2-1 // li 2 col 1-->
+    <div id="modalFin3-2-1" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content-fin">
+        <span class="close">&times;</span>
+        <div class="popup-fin" style="padding-top:30px; padding-bottom:30px">Votre population est la même qu’au départ, malheureusement, vous êtes un peu léger en victuailles ! Vous ne serez que <div id="nbrHer1"></div>à vous retransformer.</div>
+        <img id="btnFin4-2" class="btnNextFin" src="assets/icone_next.png">
+        <img id="btnAccueilFin3-2-1" class="btnPrevFin" src="assets/icone_prev.png">
+      </div>
+
+    </div>
+
+    <!-- The Modal FIN 3-3-1 // li 3 col 1-->
+    <div id="modalFin3-3-1" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content-fin">
+        <span class="close">&times;</span>
+        <div class="popup-fin" style="padding-top:30px; padding-bottom:30px">Wahou ! Votre population a grandi depuis le début de la traversée ! Malheureusement, les réserves de nourriture n’ont pas suivi la courbe, vous ne serez que <div id="nbrHer2"></div>à vous retransformer.</div>
+        <img id="btnFin4-3" class="btnNextFin" src="assets/icone_next.png">
+        <img id="btnAccueilFin3-3-1" class="btnPrevFin" src="assets/icone_prev.png">
+      </div>
+
+    </div>
+
+        <!-- The Modal FIN 3-1-2 // li 1 col 2-->
+    <div id="modalFin3-1-2" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content-fin">
+        <span class="close">&times;</span>
+        <div class="popup-fin"><p>Manque de chance, votre population a bien diminué au cours de la traversée. Vous ne pourrez pas tous être retransformés et vous ne savez pas qui sacrifier. Et si vous décidiez de continuer l’aventure en hérisson ?  </p></div>
+        <img id="btnFin4-4" class="btnNextFin" src="assets/icone_next.png">
+        <img id="btnAccueilFin3-1-2" class="btnPrevFin" src="assets/icone_prev.png">
+      </div>
+
+    </div>
+
+        <!-- The Modal FIN 3-2-2 // li 2 col 2-->
+    <div id="modalFin3-2-2" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content-fin">
+        <span class="close">&times;</span>
+        <div class="popup-fin"><p>Vous avez trouvé de la nourriture à profusion et votre population est toujours la même qu’au début de la traversée. Toutes les conditions sont réunies pour que la mutation inversée puisse s’opérer.  </p></div>
+        <img id="btnFin4-5" class="btnNextFin" src="assets/icone_next.png">
+        <img id="btnAccueilFin3-2-2" class="btnPrevFin" src="assets/icone_prev.png">
+      </div>
+
+    </div>
+
+        <!-- The Modal FIN 3-3-2 // li 3 col 2-->
+    <div id="modalFin3-3-2" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content-fin">
+        <span class="close">&times;</span>
+        <div class="popup-fin"><p>Wahou ! Votre population a grandi depuis le début de la traversée ! Malheureusement, les réserves de nourriture n’ont pas crevé le plancher. Heureusement vous avez quand même récolté assez pour vous retransformer. </p></div>
+        <img id="btnFin4-6" class="btnNextFin" src="assets/icone_next.png">
+        <img id="btnAccueilFin3-3-2" class="btnPrevFin" src="assets/icone_prev.png">
+      </div>
+
+    </div>
+
+        <!-- The Modal FIN 3-1-3 // li 1 col 3-->
+    <div id="modalFin3-1-3" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content-fin">
+        <span class="close">&times;</span>
+        <div class="popup-fin"><p>Manque de chance, votre population a bien diminué au cours de la traversée, et malgré toute la nourriture ramassée, vous ne pourrez pas être tous retransformés. Et si vous décidiez de continuer l’aventure en hérisson ? </p></div>
+        <img id="btnFin4-7" class="btnNextFin" src="assets/icone_next.png">
+        <img id="btnAccueilFin3-1-3" class="btnPrevFin" src="assets/icone_prev.png">
+      </div>
+
+    </div>
+
+        <!-- The Modal FIN 3-3-3 // li 3 col 3-->
+    <div id="modalFin3-3-3" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content-fin">
+        <span class="close">&times;</span>
+        <div class="popup-fin"><p>Wahou ! Votre population a grandi depuis le début de la traversée ! Et niveau victuailles, vous vous êtes régalés ! Les hérissons vous seront reconnaissants car vous avez contribué à renflouer la population. Vous avez bien mérité votre mutation inversée !  </p></div>
+        <img id="btnFin4-8" class="btnNextFin" src="assets/icone_next.png">
+        <img id="btnAccueilFin3-3-3" class="btnPrevFin" src="assets/icone_prev.png">
+      </div>
+
+    </div>
+
+
+
+
+
+
   </div>
-</div>
+
+
+
+
+
+
 
 
     <!-- INFORMATION PROCEDURALE 1 -->
@@ -660,6 +865,7 @@
         </div>
       </div>
 
+
     <!-- INFORMATION PROCEDURALE 3 -->
 
       <div id="infoProc3" class="modal-regles">
@@ -667,10 +873,13 @@
         <div class="modal-content">
           <div class="popup">INFORMATION PROCÉDURALE
           <br>
-          <br>Les règles du jeu ont de nouveau muté sous l’action d’un Lubrizo.  </div>
+          <br>HOP, vous êtes de nouveau un mâle ! Et le mois de juin se termine, il va falloir s’activer pour trouver une femelle réceptive avec qui s’accoupler si vous voulez renflouer votre population d’une portée ! Là aussi, vous osez les traversées de routes, car le temps presse ! Ne prenez tout de même pas trop de risque pour arriver entier au centre de transformation. </div>
           <img id="btninfoProc3" class="btnNext" src="assets/icone_next.png">
         </div>
       </div>
+
+
+
 
     <!-- INFORMATION PROCEDURALE 4 -->
 
@@ -679,23 +888,8 @@
         <div class="modal-content">
           <div class="popup">INFORMATION PROCÉDURALE
           <br>
-          <br>HOP, vous êtes de nouveau un mâle ! Et le mois de juin se termine, il va falloir s’activer pour trouver une femelle réceptive avec qui s’accoupler si vous voulez renflouer votre population d’une portée ! Là aussi, vous osez les traversées de routes, car le temps presse ! Ne prenez tout de même pas trop de risque pour arriver entier au centre de transformation. </div>
-          <img id="btninfoProc4" class="btnNext" src="assets/icone_next.png">
-        </div>
-      </div>
-
-
-
-
-    <!-- INFORMATION PROCEDURALE 5 -->
-
-      <div id="infoProc5" class="modal-regles">
-        <!-- Modal content -->
-        <div class="modal-content">
-          <div class="popup">INFORMATION PROCÉDURALE
-          <br>
           <br>Oh ! Vous êtes une fois de plus une femelle, mais cette fois en début de gestation ! Vous avez beaucoup moins envie de bouger, et cherchez un endroit rassurant pour préparer votre portée. </div>
-          <img id="btninfoProc5" class="btnNext" src="assets/icone_next.png">
+          <img id="btninfoProc4" class="btnNext" src="assets/icone_next.png">
         </div>
       </div>
 
@@ -721,7 +915,7 @@
         <!-- Modal content -->
         <div class="modal-content">
           <img class="illu-classique" src="assets/attaque_velo.png">
-          <div class="popup">attaque random 2 !</div>
+          <div class="popup">Un rat vous attaque ! Il vous apris de cours et vous n'avez pas eu le temps de vous mettre en boule, vous perdez un individu !</div>
           <img id="btnattaqueRandom2" class="btnNext" src="assets/icone_next.png">
         </div>
       </div>
@@ -737,7 +931,7 @@
         </div>
       </div>
 
-
+</div>
 
 <header>
 	

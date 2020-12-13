@@ -23,6 +23,7 @@ $('#boutonForm').click(function() {
 	}
 
 	localStorage.setItem('compteurVies', testin);
+	localStorage.setItem('nbrParticipants', testin);
 	compteurVies = localStorage.getItem('compteurVies');
 	console.log(compteurVies);
 
