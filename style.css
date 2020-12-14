@@ -294,7 +294,7 @@ body {
 /*  margin-top: 0.8rem;*/
   border-radius: 20px;
   left:35vw;
-  bottom:21vh;
+  bottom:15vh;
   position:fixed;
   border: 0;
   text-transform: uppercase;
@@ -446,7 +446,7 @@ body {
   width: 135px;
   height: 35px;
   top : 0vh;
-  left: 0vw;
+  left: -2vw;
   border: 1px solid #0fdbba;
   border-radius: 15px;
 
@@ -458,7 +458,7 @@ body {
   width: 135px;
   height: 35px;
   top : 0vh;
-  left: 44vw;
+  left: 43vw;
   border: 1px solid #0fdbba;
   border-radius: 15px;
 
@@ -469,7 +469,7 @@ body {
   padding: 1px;
   width: 95px;
   height: 35px;
-  top : 58vh;
+  top : 56vh;
   left: 5vw;
   border: 1px solid #0fdbba;
   border-radius: 15px;
@@ -760,10 +760,11 @@ body {
 }
 
   #illu-photo {
-  width: 80px;
+  width: 18vw;
   display:block;
   z-index: 1;
   position:fixed;
+  bottom:11vh;
   left:10vw;
   }
 
@@ -1167,7 +1168,7 @@ body {
   position: fixed;
   align-content: center;
   left: 54vw;
-  bottom: 1.5vh;
+  bottom: 1vh;
   z-index: 2;
 }
 
@@ -1182,7 +1183,7 @@ body {
     position:fixed;
     align-content: center;
     left: 28vw;
-    bottom: 1.5vh;
+    bottom: 1vh;
     z-index:2;
 }
 
