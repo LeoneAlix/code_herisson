@@ -189,10 +189,18 @@ body {
 
 #skip-button {
   position: fixed;
-  bottom: 20px;
-  z-index: 3;
+  bottom: 10px;
   left: 20px;
   text-decoration: none;
+  text-align: center;
+  color: white;;
+  background-color: #1238E0;
+  border-radius: 20px;
+  border:0;
+  padding:10px;
+  font-size: 18px;
+  z-index:3;
+  max-width: 100%;
 }
 
 
@@ -569,7 +577,7 @@ body {
   max-width: 100%;
 }
 
-.popup2 {
+.popup2{
 /*  position:absolute;*/
   width:80vw;
   text-align: center;
