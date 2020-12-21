@@ -1177,7 +1177,7 @@ body {
   align-content: center;
   left: 54vw;
   bottom: 1vh;
-  z-index: 2;
+  z-index: 3;
 }
 
 .btnNext:hover,
@@ -1192,7 +1192,7 @@ body {
     align-content: center;
     left: 28vw;
     bottom: 1vh;
-    z-index:2;
+    z-index:3;
 }
 
 .btnPrev:hover,
