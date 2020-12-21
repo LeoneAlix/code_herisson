@@ -431,7 +431,7 @@ var x = setInterval(function() {
 var timer2 = 0;
 
 $('#btnReprod3').click(function() {
-	timer2 = 6000;
+	timer2 = 60000;
 	$("#btnReprod4").css('display', 'none'); 
 
 var x2 = setInterval(function() {
@@ -466,7 +466,7 @@ var x2 = setInterval(function() {
 var timer3 = 0;
 
 $('#btnReprod5').click(function() {
-	timer3 = 6000;
+	timer3 = 600000;
 	$("#btnReprod6").css('display', 'none');
 	$("#texte-nid").css('display', 'block');
 
@@ -503,7 +503,7 @@ var x3 = setInterval(function() {
 var timer4 = 0;
 
 $('#btnHerisson3').click(function() {
-	timer4 = 6000;
+	timer4 = 60000;
 	$("#btnHerisson4").css('display', 'none');
 
 var x4 = setInterval(function() {
@@ -539,7 +539,7 @@ var x4 = setInterval(function() {
 var timer5;
 
 $('#btnHerisson5').click(function() {
-	timer5 = 6000;
+	timer5 = 600000;
 	$("#btnHerisson6").css('display', 'none');
 	$("#texte-nid-2").css('display', 'block');
 
